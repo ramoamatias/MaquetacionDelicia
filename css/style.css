@@ -1,0 +1,1219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+.encabezado {
+    background-color: #674ea7;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+}
+
+.titulo {
+    font-size: 40px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 2px;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 2px 2px #000000;
+}
+
+.titulo::first-letter {
+    font-size: 55px;
+}
+
+.iconoHamburguesa,
+.icon,
+.iconoCancelar  {
+    width: 40px;
+}
+
+.iconoCancelar {
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 30px;
+    display: none;
+}
+
+
+#check {
+    display: none;
+}
+
+#check:checked ~ .navegacion {
+    display: block;
+}
+
+#check:checked ~ label img.iconoCancelar {
+    display: block;
+}
+
+#check:checked ~ label img.iconoHamburguesa {
+    display: none;
+}
+
+.navegacion {
+    display: none;
+    width: 100%;
+    background-color:#674ea7;
+    height: calc(100vh - 60px);
+    position: absolute;
+    top:60px;
+    left: 0;
+    z-index: 99999999;
+}
+
+
+.navegacionLista {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80%;
+   
+}
+
+
+.navegacion li {
+    width: 90%;
+    text-align: center;
+}
+
+.navegacion li a img {
+    margin-right: 10px;
+}
+img {width: 40%;}
+
+.navegacionLista li a {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 30px;
+    font-size: 24px;
+    font-weight: normal;
+    font-family: 'Rubik', sans-serif;
+
+}
+
+.navegacionLista li a.active {
+    color: #ff64af;
+    font-weight: bolder;
+}
+
+.navegacionLista li a:hover {
+    color: #ff64af;
+    background-color: #ffffff9a;
+    border-radius: 20px;
+
+}
+
+/* Le Damos estilos al main */
+
+.inicio {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mainInicio {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url("../assets/galeria/FondoHome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inicioContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 160px;
+}
+
+.inicioTitulo {
+    font-family: 'Great Vibes', cursive;
+    width: 400px;
+    text-align: center;
+    font-size: 100px;
+    color: #674ea7;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 1px 1px #ffffff;
+}
+
+.inicioDescripcion {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    color: #ffffff;
+    text-shadow: 2px 2px #674ea7;
+}
+
+/*Estilos para el footer*/
+
+.footer{
+    background-color: #674ea7;
+    height: 110px;
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: 'Rubik', sans-serif;
+    
+
+}
+
+.tituloFooter {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-bottom: 2px;
+    text-align: center;
+    margin-bottom: 5px;
+
+}
+
+.iconoFooterContenedor {
+    display: flex;
+    justify-content: space-around;
+}
+
+.iconoFooter {
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+
+.copyrightFooter {
+    color: #ffffff;
+    font-size: 12px;
+    padding: 10px;
+}
+
+
+
+/* Estilos para Pagina de Contacto */
+
+
+.contacto {
+    width: 100%;
+    height: 100vh; 
+    font-family: 'Rubik', sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("../assets/galeria/FondoHome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainContacto {
+    height:calc(100vh - 170px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.formularioContacto::before {
+    content: "";
+    position:absolute;
+    width: 350px;
+    height: 400px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+    z-index: -1;
+    
+}
+
+.formularioContacto{
+    display:flex;
+    flex-direction: column;
+    width: 350px;
+    height: 400px;
+    border-radius: 30px;
+    border: 3px solid  #000000;
+    overflow: hidden;
+    
+}
+
+.tituloContacto {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 30px;
+    color: #674ea7;
+    border-bottom: 3px solid black;
+    text-shadow: 2px 1px #ffffff;
+    margin-bottom: 10px;
+    
+}
+
+.formularioContacto input {
+    width: 60%;
+    background-color: transparent;
+    margin: 10px auto;
+    border: none;
+    border-bottom: 2px solid #674ea7;
+    background-color: #674ea750;
+    border-radius: 25px;
+    padding: 10px;
+    text-align: center;
+    color: #251f1f;
+    font-weight: bolder;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bolder;
+}
+
+.formularioContacto input:focus {
+    outline: none;
+}
+
+.formularioContacto input::placeholder {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bolder;
+} 
+
+.formularioContacto textarea {
+    height: 100%;
+    margin-top: 16px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 2px solid #674ea7;
+    background-color: #674ea780;
+    border-radius: 25px;
+    border: none;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+    resize: none;
+}
+
+.formularioContacto textarea:focus {
+    outline: none;
+}
+
+.formularioContacto textarea::placeholder {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+} 
+
+
+.formularioContacto .btnEnviarContacto {
+    background-color: #674ea7;
+    color:#ffffff;
+    margin: 10px auto;
+    font-weight: bolder;
+    width: 100px;
+    border: 1px solid #000000;
+}
+
+
+.formularioContacto .btnEnviarContacto:hover {
+    color: #ff64af;
+    background-color: #ffffff42;
+    font-weight: bolder;
+    border-radius: 20px;
+    border: 1px solid #674ea7;
+
+}
+
+
+/* Definimos estilos para seccion SobreMi */
+.sobreMi {
+    background-color: #ddd3f0;
+    font-family: 'Rubik', sans-serif;
+    padding: 5px;
+
+    display: grid;
+    grid-template-areas: "TituloSobreMi   TituloSobreMi "
+                         "VideoSobreMi    VideoSobreMi"
+                         "ContactoSobreMi ContactoSobreMi"
+
+    ;
+
+}
+
+.sectionSobreMi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-area: TituloSobreMi;
+
+}
+
+.videoMobileSobreMi{
+    width: 100%;
+    border-radius: 25px;
+    pointer-events:none;
+    grid-area: VideoSobreMi;
+}
+
+.videoDesktopSobreMi {
+    display: none;
+}
+
+.textoSobreMi {
+    font-size: 48px;
+    padding: 10px;
+}
+
+
+.imgSobreMi {
+    height: 90%;
+    border-radius: 50px;
+    align-self: flex-start;
+ }
+
+
+.tituloSobreMi {
+    color: #674ea7;
+    text-shadow: 2px 2px white;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.descripcionSobreMi {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.iconoUbicacion {
+    width: 20px;
+}
+
+.ubicacionSobreMi {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 60px;
+    grid-area: ContactoSobreMi;
+}
+
+.ubicacionSobreMi article {
+    margin: 30px 0;
+}
+
+.ubicacionSobreMi  h3 {
+    font-size: 24px;
+    text-align: center;
+}
+
+.ubicacionSobreMi  a {
+    font-size: 15px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.ubicacionSobreMi a:hover {
+    color: #674ea7;
+}
+
+.ubicacionSobreMi iframe {
+    width: 100%;
+}
+
+/* Definimos los estilos para la Galeria */
+.galeria {
+    width: 100%;
+}
+
+.imagenes {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(200px,50%));
+    grid-auto-rows:200px;
+    grid-auto-flow: row dense
+   
+}
+
+.imagenes img {
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.imagenes {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(100px,50%));
+    grid-auto-rows:200px;
+    grid-auto-flow: row dense
+   
+}
+
+
+.imagenes img:nth-child(2n + 1) {
+    grid-row: span 2;
+}
+
+/* Damos Estilos a Recetas */
+.encabezadoReceta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    grid-area: Encabezado;
+}
+
+.encabezadoReceta form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.encabezadoReceta form input[type="search"] {
+    border: 2px solid #674ea7;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 16px;    
+    margin-right: 5px;
+}
+
+.encabezadoReceta form input[type="search"]:focus {
+    outline: none;
+}
+
+.encabezadoReceta form input[type="submit"] {
+    background-color: #674ea7;
+    color:#ffffff;
+    font-weight: bolder;
+    width: 100px;
+    padding: 9px;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+
+.encabezadoReceta form input[type="submit"]:hover {
+    color: #ff64af;
+    background-color: #ffffff42;
+    border-radius: 10px;
+    border: 1px solid #674ea7;
+
+}
+
+.tituloReceta {
+    font-size: 48px;
+    color: #674ea7;
+    text-shadow: 2px 2px #000000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    height: 150px;
+    width: 350px;
+    padding:5px;
+    list-style: none;
+    background-color: #674ea7;
+    border-radius: 25px;
+    grid-area: nav;
+    text-align: center;
+}
+
+.lista li a {
+    color: #ffffff;
+    font-weight: normal;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    padding-left: 10px;
+
+
+}
+
+.lista li a:hover {
+    color: #ff64af;
+    background-color: #ffffff9a;
+    border-radius: 20px;
+}
+
+
+.contenidoRecetas {
+    display: grid;
+    grid-template-areas:     "Encabezado "
+                             "nav        "
+                             "TitCal     "
+                             "Cal1       "
+                             "Cal2       "
+                             "Cal3       "
+                             "Cal4       "
+                             "linkCal    "
+                             "TitFrios   "
+                             "Frios1     "
+                             "Frios2     "
+                             "Frios3     "
+                             "Frios4     "
+                             "linkFrios  " 
+                             "TitFritos  "
+                             "Fritos1    "
+                             "Fritos2    "
+                             "Fritos3    "
+                             "Fritos4    "
+                             "linkFritos "
+                             "TitHel     "
+                             "Hel1       "
+                             "Hel2       "
+                             "Hel3       "
+                             "Hel4       "
+                             "linkHel    "
+                             "TitNat     "
+                             "Nat1       "
+                             "Nat2       "
+                             "Nat3       "
+                             "Nat4       "
+                             "linkNat    "
+                             ;
+    justify-items: center;
+}
+
+.contenidoRecetas h2 {
+    margin: 30px 10px;
+    font-size: 32px;
+    color: #674ea7;
+    
+}
+
+.contenedorRecetas {
+    background-color: #e7dfff;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    width: 80%;
+    height: 400px;
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 25px;
+    margin: 20px 0;
+}
+.contenedorRecetas h3 {
+    font-size: 26px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.contenedorRecetas img {
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+    height: 60%;
+    margin: 10px 0;
+}
+
+
+#calientes{
+    grid-area: TitCal;
+    justify-self: start;
+}
+
+.cal1 {
+    grid-area: Cal1;
+    justify-self: center;
+    align-self: stretch;
+}
+
+.cal2 {
+    grid-area: Cal2;
+}
+
+.cal3 {
+    grid-area: Cal3;
+}
+
+.cal4 {
+    grid-area: Cal4;
+}
+
+.linkCal {
+    grid-area: linkCal;
+}
+
+
+#frios {
+    grid-area: TitFrios;
+    justify-self: start;
+}
+
+.frios1 {
+    grid-area: Frios1;
+}
+
+.frios2 {
+    grid-area: Frios2;
+}
+
+.frios3 {
+    grid-area: Frios3;
+}
+
+.frios4 {
+    grid-area: Frios4;
+}
+
+.linkFrios {
+    grid-area: linkFrios;
+}
+
+
+#fritos {
+    grid-area: TitFritos;
+    justify-self: start;
+}
+
+.fritos1 {
+    grid-area: Fritos1;
+}
+
+.fritos2 {
+    grid-area: Fritos2;
+}
+
+.fritos3 {
+    grid-area: Fritos3;
+}
+
+.fritos4 {
+    grid-area: Fritos4;
+}
+
+.linkFritos {
+    grid-area: linkFritos;
+}
+
+#aBaseDeHelados {
+    grid-area: TitHel;
+    justify-self: start;
+}
+
+.hel1 {
+    grid-area: Hel1;
+}
+
+.hel2 {
+    grid-area: Hel2;
+}
+
+.hel3 {
+    grid-area: Hel3;
+}
+
+.hel4 {
+    grid-area: Hel4;
+}
+
+.linkHel {
+    grid-area: linkHel;
+}
+
+
+#QuesosYFrutasAlNatural {
+    grid-area: TitNat;
+    justify-self: start;
+}
+
+.nat1 {
+    grid-area: Nat1;
+}
+
+.nat2 {
+    grid-area: Nat2;
+}
+
+.nat3 {
+    grid-area: Nat3;
+}
+
+.nat4 {
+    grid-area: Nat4;
+}
+
+.linkNat {
+    grid-area: linkNat;
+    margin-bottom: 10px;
+}
+
+
+
+@media screen and (min-width: 600px) {
+
+    .imagenes {
+        display: grid;
+        grid-template-columns: repeat(3,minmax(200px,50%));
+        grid-auto-rows:200px;
+        grid-auto-flow: row dense
+    }
+
+    .imagenes img:nth-child(3n) {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    .imagenes img:nth-child(20) {
+        grid-row: 1 / 3;
+    }
+ 
+    .contenidoRecetas {
+        display: grid;
+        grid-template-areas:     "Encabezado  Encabezado"
+                                 "nav         nav"
+                                 "TitCal      ."
+                                 "Cal1       Cal2"
+                                 "Cal3       Cal4"
+                                 "linkCal    linkCal"
+                                 "TitFrios   ."
+                                 "Frios1     Frios2"
+                                 "Frios3     Frios4"
+                                 "linkFrios  linkFrios" 
+                                 "TitFritos  ."
+                                 "Fritos1    Fritos2"
+                                 "Fritos3    Fritos4"
+                                 "linkFritos linkFritos"
+                                 "TitHel     ."
+                                 "Hel1       Hel2"
+                                 "Hel3       Hel4"
+                                 "linkHel    linkHel"
+                                 "TitNat     ."
+                                 "Nat1       Nat2"
+                                 "Nat3       Nat4"
+                                 "linkNat    linkNat"
+                                 ;
+        justify-items: center;
+    }
+    
+    .lista {
+        flex-direction: row;
+        height: auto;
+        width: auto;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+
+    /* Adaptamos el Nav para Tablet y desktop */
+ 
+    
+    .iconoCancelar,
+    .iconoHamburguesa {
+        display: none;
+    }
+
+   
+    .encabezado {
+        align-items: center;
+    }
+     
+    .navegacion {
+        display: block;
+        position: static;
+        width:700px;
+        height: auto;
+    }
+
+
+     .navegacionLista {
+        flex-direction: row;
+    }
+    
+    .icon {
+        width: 20px;
+        height: auto;
+    }
+
+    .navegacionLista li a {
+        display: inline-block;
+        padding: 11px 0;
+        font-size: 20px;
+        font-weight: normal;
+        font-family: 'Rubik', sans-serif;
+        /* transition: all 1s; */
+    }
+    
+    .logo {  
+        width: 200px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .titulo {
+        font-size: 40px;
+        text-decoration: none;
+        color: #ffffff;
+        margin-left: 2px;
+        font-family: 'Great Vibes', cursive;
+        text-shadow: 2px 2px #000000;
+    }
+
+    .inicioTitulo {
+        font-size: 200px;
+    }
+
+    .inicioDescripcion {
+        font-size: 30px;
+    }
+
+
+    /* Adaptamos galeria a mayor resolucion */
+    .imagenes {
+        display: grid;
+        grid-template-columns: repeat(4,minmax(200px,50%));
+        grid-auto-rows:200px;
+        grid-auto-flow: row dense
+    }
+
+    .imagenes img:nth-child(2n) {
+        grid-row: span 2;
+        grid-column: span 1;
+    }
+
+    .imagenes img:nth-child(5),
+    .imagenes img:nth-child(19),
+    .imagenes img:nth-child(23),
+    .imagenes img:nth-child(24)
+    {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    
+ 
+    /* Adaptamos Sobre Mi */
+
+    .sobreMi {
+    grid-template-areas: "TituloSobreMi   VideoSobreMi"
+                         "ContactoSobreMi ContactoSobreMi";
+
+   }
+
+    .sectionSobreMi {
+        align-self: start;
+    }
+
+    .tituloSobreMi {
+        font-size: 80px;
+    }
+
+    .descripcionSobreMi {
+        font-size: .6em;
+    }
+
+    .videoMobileSobreMi {
+        display: none;
+    }
+
+    .videoDesktopSobreMi {
+        margin-top: 40px;
+        display: block;
+        border-radius: 25px;
+        height: 80vh;
+        margin-right: 20px;
+        pointer-events:none;
+    }
+
+
+    .contenidoRecetas {
+        display: grid;
+        grid-template-areas:     "Encabezado  Encabezado  Encabezado"
+                                 "nav         nav         nav"
+                                 "TitCal      .           ."
+                                 "Cal1       Cal2         Cal3"
+                                 ".          Cal4         ."
+                                 "linkCal    linkCal      linkCal"
+                                 "TitFrios   .            ."
+                                 "Frios1     Frios2       Frios3"
+                                 ".          Frios4       ."
+                                 "linkFrios  linkFrios    linkFrios" 
+                                 "TitFritos  .            ."
+                                 "Fritos1    Fritos2      Fritos3"
+                                 ".          Fritos4      ."
+                                 "linkFritos linkFritos   linkFritos"
+                                 "TitHel     .            ."
+                                 "Hel1       Hel2         Hel3"
+                                 ".          Hel4         ."
+                                 "linkHel    linkHel      linkHel"
+                                 "TitNat     .            ."
+                                 "Nat1       Nat2         Nat3"
+                                 ".          Nat4         ."
+                                 "linkNat    linkNat      linkNat"
+                                 ;
+        justify-items: center;
+    }
+    
+
+
+
+
+}
+
+
+
+@media screen and (min-width: 1300px) {
+
+    .imagenes {
+        display: grid;
+        grid-template-columns: repeat(6,minmax(200px,50%));
+        grid-auto-rows:200px;
+        grid-auto-flow: row dense;
+       
+    }
+
+    .imagenes img:nth-child(3n) {
+        grid-row: span 4;
+        grid-column: span 3;
+    }
+
+    .imagenes img:nth-child(21) {
+        grid-row: span 2;
+    }
+
+    .imagenes img:nth-child(13) {
+        grid-column: span 2;
+    }
+
+    .imagenes img:nth-child(18) {
+        grid-row: span 3;
+        grid-column: span 3;
+
+    }
+
+    .imagenes img:nth-child(19) {
+        grid-row: span 3;
+        grid-column: span 3;
+
+    }
+
+    .imagenes img:nth-child(24),
+    .imagenes img:nth-child(22)  {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+
+
+
+    /* Damos estilos a Recetas */
+   
+    .contenidoRecetas {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: "Encabezado  Encabezado  Encabezado  Encabezado"
+                             "nav         nav         nav         nav       "
+                             "TitCal      .           .           .         "
+                             "Cal1        Cal2        Cal3        Cal4      "
+                             "linkCal     linkCal     linkCal     linkCal   "
+                             "TitFrios    .           .           .         "
+                             "Frios1      Frios2      Frios3      Frios4    "
+                             "linkFrios   linkFrios   linkFrios   linkFrios "
+                             "TitFritos   .           .           .         "
+                             "Fritos1     Fritos2     Fritos3     Fritos4   "
+                             "linkFritos  linkFritos  linkFritos  linkFritos"
+                             "TitHel      TitHel      TitHel      .         "
+                             "Hel1        Hel2        Hel3        Hel4      "
+                             "linkHel     linkHel     linkHel     linkHel   "
+                             "TitNat      TitNat      TitNat      TitNat    "
+                             "Nat1        Nat2        Nat3        Nat4      "
+                             "linkNat     linkNat     linkNat     linkNat   "                            
+
+                             ;
+    
+        justify-items: center;
+        align-items: start;    
+    
+    }
+    
+
+     
+    #calientes{
+        grid-area: TitCal;
+        justify-self: start;
+    }
+    
+    .cal1 {
+        grid-area: Cal1;
+    }
+    
+    .cal2 {
+        grid-area: Cal2;
+    }
+    
+    .cal3 {
+        grid-area: Cal3;
+    }
+    
+    .cal4 {
+        grid-area: Cal4;
+    }
+    
+    .linkCal {
+        grid-area: linkCal;
+    }
+    
+    
+    #frios {
+        grid-area: TitFrios;
+        justify-self: start;
+    }
+    
+    .frios1 {
+        grid-area: Frios1;
+    }
+    
+    .frios2 {
+        grid-area: Frios2;
+    }
+    
+    .frios3 {
+        grid-area: Frios3;
+    }
+    
+    .frios4 {
+        grid-area: Frios4;
+    }
+    
+    .linkFrios {
+        grid-area: linkFrios;
+    }
+    
+    
+    #fritos {
+        grid-area: TitFritos;
+        justify-self: start;
+    }
+    
+    .fritos1 {
+        grid-area: Fritos1;
+    }
+    
+    .fritos2 {
+        grid-area: Fritos2;
+    }
+    
+    .fritos3 {
+        grid-area: Fritos3;
+    }
+    
+    .fritos4 {
+        grid-area: Fritos4;
+    }
+    
+    .linkFritos {
+        grid-area: linkFritos;
+    }
+    
+    #aBaseDeHelados {
+        grid-area: TitHel;
+        justify-self: start;
+    }
+    
+    .hel1 {
+        grid-area: Hel1;
+    }
+    
+    .hel2 {
+        grid-area: Hel2;
+    }
+    
+    .hel3 {
+        grid-area: Hel3;
+    }
+    
+    .hel4 {
+        grid-area: Hel4;
+    }
+    
+    .linkHel {
+        grid-area: linkHel;
+    }
+    
+    
+    #QuesosYFrutasAlNatural {
+        grid-area: TitNat;
+        justify-self: start;
+    }
+    
+    .nat1 {
+        grid-area: Nat1;
+    }
+    
+    .nat2 {
+        grid-area: Nat2;
+    }
+    
+    .nat3 {
+        grid-area: Nat3;
+    }
+    
+    .nat4 {
+        grid-area: Nat4;
+    }
+    
+    .linkNat {
+        grid-area: linkNat;
+    }
+    
+    
+    
+
+ 
+}
+
+@media screen and (min-width: 1800px) {
+
+    .imagenes {
+        display: grid;
+        grid-template-columns: repeat(12,minmax(100px,50%));
+        grid-auto-rows:200px;
+        grid-auto-flow: row dense;
+       
+    }
+
+    .imagenes img:nth-child(2n) {
+        grid-row: span 4 ;
+        grid-column: span 2;
+    }
+    
+    .imagenes img:nth-child(21) {
+        grid-row: span 3;
+    }
+    .imagenes img:nth-child(24) {
+        grid-row: span 2;
+        grid-column: span 3 ;
+    }
+
+    
+}
