@@ -33,26 +33,75 @@ html {
     font-size: 55px;
 }
 
-.iconoHamburguesa,
-.icon,
-.iconoCancelar  {
+.icon{
     width: 40px;
 }
 
-.iconoCancelar {
-    margin-top: 5px;
-    margin-right: 5px;
-    width: 30px;
-    display: none;
+.menuHamburguesa {
+    position: absolute;
+    top:16px;
+    right: 16px;
+    height: 6px;
+    width: 50px;
+    border-radius: 25px;
+    z-index: 9998;
+    background-color: #e7dfff;
+    transform: rotate(0deg) translate(0,10px);
+    transform-origin: top left;
+    transition: transform 500ms ease, background-color 500ms ease;
 }
+
+.menuHamburguesa::after,
+.menuHamburguesa::before {
+    content: "";
+    background-color: #e7dfff;
+    display: block;
+    width: 100%;
+    height: 6px;
+    border-radius: 25px;
+    transition: transform 500ms ease, background-color 500ms ease;
+}
+
+.menuHamburguesa::before {
+    transform: rotate(0) translate(0,-12px);
+}
+
+.menuHamburguesa::after {
+    transform: rotate(0) translate(0, 6px);
+}
+
+
+
 
 
 #check {
-    display: none;
+    position: absolute;
+    top:0px;
+    right: 0px;
+    height: 60px;
+    width: 80px;
+    opacity: 0;
+    z-index: 9999;
 }
+
+#check:checked + .menuHamburguesa {
+    background-color: transparent;
+    /* transform: rotate(100deg); */
+}
+
+#check:checked + .menuHamburguesa::before {
+    transform: rotate(45deg) translate(0,0);
+}
+
+#check:checked + .menuHamburguesa::after {
+    transform: rotate(-45deg) translate(4px,-5px);
+}
+
 
 #check:checked ~ .navegacion {
     display: block;
+    transition: transform .5s ease-in;
+    transform: translate(0,0);
 }
 
 #check:checked ~ label img.iconoCancelar {
@@ -64,7 +113,6 @@ html {
 }
 
 .navegacion {
-    display: none;
     width: 100%;
     background-color:#674ea7;
     height: calc(100vh - 60px);
@@ -72,6 +120,8 @@ html {
     top:60px;
     left: 0;
     z-index: 99999999;
+    transition: transform .3s ease;
+    transform: translate(-100%,0%);
 }
 
 
@@ -104,7 +154,7 @@ img {width: 40%;}
     height: 100%;
     color: #ffffff;
     text-decoration: none;
-    padding: 30px;
+    padding: 20px;
     font-size: 24px;
     font-weight: normal;
     font-family: 'Rubik', sans-serif;
@@ -114,7 +164,11 @@ img {width: 40%;}
 .navegacionLista li a.active {
     color: #ff64af;
     font-weight: bolder;
-}
+    animation-name: resaltar;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+ }
 
 .navegacionLista li a:hover {
     color: #ff64af;
@@ -123,7 +177,22 @@ img {width: 40%;}
 
 }
 
+@keyframes resaltar {
+    0% {
+        transform: scale(1,1);
+        color: #ffffff;
+    }
+    
+    100% {
+        transform: scale(1.05,1.05);
+        color: #ff64af;
+    }
+    
+}
+
+
 /* Le Damos estilos al main */
+
 
 .inicio {
     width: 100%;
@@ -168,7 +237,25 @@ img {width: 40%;}
     font-weight: bolder;
     color: #ffffff;
     text-shadow: 2px 2px #674ea7;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 14ch;
+
+    animation: typing 4s steps(14), blink .5s infinite step-end alternate;
+    overflow: hidden;
 }
+
+@keyframes typing {
+    from  {width: 0;}
+    
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }    
+}
+
 
 /*Estilos para el footer*/
 
@@ -198,6 +285,15 @@ img {width: 40%;}
 .iconoFooterContenedor {
     display: flex;
     justify-content: space-around;
+}
+
+.iconoFooterContenedor a {
+    transition: all .5s;
+}
+
+.iconoFooterContenedor a:hover {
+    transform: scale(1.5,1.5);
+
 }
 
 .iconoFooter {
@@ -461,6 +557,7 @@ img {width: 40%;}
     object-fit: cover;
     border-radius: 25px;
 }
+
 
 .imagenes {
     display: grid;
@@ -785,6 +882,7 @@ img {width: 40%;}
 
     .imagenes img:nth-child(20) {
         grid-row: 1 / 3;
+        /* grid-column: span 2; */
     }
  
     .contenidoRecetas {
@@ -827,13 +925,14 @@ img {width: 40%;}
 
     /* Adaptamos el Nav para Tablet y desktop */
  
-    
-    .iconoCancelar,
-    .iconoHamburguesa {
-        display: none;
-    }
+   #checkbox {
+       display: none;
+   }
 
-   
+   .menuHamburguesa {
+       display: none;
+   }
+
     .encabezado {
         align-items: center;
     }
@@ -843,6 +942,7 @@ img {width: 40%;}
         position: static;
         width:700px;
         height: auto;
+        transform: translate(0,0);
     }
 
 
@@ -854,14 +954,22 @@ img {width: 40%;}
         width: 20px;
         height: auto;
     }
-
+    
+    .navegacionLista li {
+        transition: all .2s;
+    }
+    
+    .navegacionLista li:hover {
+        transform: translateY(-2px);
+    }
+    
     .navegacionLista li a {
         display: inline-block;
         padding: 11px 0;
         font-size: 20px;
         font-weight: normal;
         font-family: 'Rubik', sans-serif;
-        /* transition: all 1s; */
+        transition: all 1s;
     }
     
     .logo {  
@@ -912,6 +1020,8 @@ img {width: 40%;}
     
  
     /* Adaptamos Sobre Mi */
+
+   
 
     .sobreMi {
     grid-template-areas: "TituloSobreMi   VideoSobreMi"
