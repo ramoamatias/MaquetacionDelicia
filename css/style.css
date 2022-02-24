@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+a:hover{
+    color: #ffffff;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+
 html {
     scroll-behavior: smooth;
     font-family: 'Rubik', sans-serif;
@@ -132,6 +142,8 @@ html {
     justify-content: space-evenly;
     align-items: center;
     height: 80%;
+    margin-bottom: 0;
+    padding: 0;
    
 }
 
@@ -568,9 +580,11 @@ img {width: 40%;}
 }
 
 
-.imagenes img:nth-child(2n + 1) {
+.imagenes button:nth-child(2n + 1) {
     grid-row: span 2;
 }
+
+
 
 /* Damos Estilos a Recetas */
 .encabezadoReceta {
@@ -864,7 +878,38 @@ img {width: 40%;}
     margin-bottom: 10px;
 }
 
+.card {
+    position: static;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 24rem;
+    background-color: #e7dfff;
+    margin-bottom: 30px;
+}
 
+.card-title {
+    padding: 1rem;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+}
+
+.card-text {
+    padding: 1rem;
+    width: 80%;
+    margin-left:0 auto;
+}
+
+.linkRecetas {
+    color: #000000;
+    text-decoration: none;
+}
+
+.linkRecetas:hover {
+    color: #674ea7;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 @media screen and (min-width: 600px) {
 
@@ -875,18 +920,19 @@ img {width: 40%;}
         grid-auto-flow: row dense
     }
 
-    .imagenes img:nth-child(3n) {
+    .imagenes button:nth-child(3n) {
         grid-row: span 2;
         grid-column: span 2;
     }
 
-    .imagenes img:nth-child(20) {
+    .imagenes button:nth-child(20) {
         grid-row: 1 / 3;
-        /* grid-column: span 2; */
+
     }
  
     .contenidoRecetas {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
         grid-template-areas:     "Encabezado  Encabezado"
                                  "nav         nav"
                                  "TitCal      ."
@@ -1004,19 +1050,22 @@ img {width: 40%;}
         grid-auto-flow: row dense
     }
 
-    .imagenes img:nth-child(2n) {
+    .imagenes button:nth-child(2n) {
         grid-row: span 2;
         grid-column: span 1;
     }
 
-    .imagenes img:nth-child(5),
-    .imagenes img:nth-child(19),
-    .imagenes img:nth-child(23),
-    .imagenes img:nth-child(24)
+    .imagenes button:nth-child(5),
+    .imagenes button:nth-child(19),
+    .imagenes button:nth-child(23),
+    .imagenes button:nth-child(24)
     {
         grid-column: span 2;
         grid-row: span 2;
     }
+    
+
+
     
  
     /* Adaptamos Sobre Mi */
@@ -1057,6 +1106,7 @@ img {width: 40%;}
 
     .contenidoRecetas {
         display: grid;
+        grid-template-columns: repeat(3, 1fr);
         grid-template-areas:     "Encabezado  Encabezado  Encabezado"
                                  "nav         nav         nav"
                                  "TitCal      .           ."
@@ -1090,7 +1140,6 @@ img {width: 40%;}
 }
 
 
-
 @media screen and (min-width: 1300px) {
 
     .imagenes {
@@ -1101,33 +1150,33 @@ img {width: 40%;}
        
     }
 
-    .imagenes img:nth-child(3n) {
+    .imagenes button:nth-child(3n) {
         grid-row: span 4;
         grid-column: span 3;
     }
 
-    .imagenes img:nth-child(21) {
+    .imagenes button:nth-child(21) {
         grid-row: span 2;
     }
 
-    .imagenes img:nth-child(13) {
+    .imagenes button:nth-child(13) {
         grid-column: span 2;
     }
 
-    .imagenes img:nth-child(18) {
+    .imagenes button:nth-child(18) {
         grid-row: span 3;
         grid-column: span 3;
 
     }
 
-    .imagenes img:nth-child(19) {
+    .imagenes button:nth-child(19) {
         grid-row: span 3;
         grid-column: span 3;
 
     }
 
-    .imagenes img:nth-child(24),
-    .imagenes img:nth-child(22)  {
+    .imagenes button:nth-child(24),
+    .imagenes button:nth-child(22)  {
         grid-column: span 2;
         grid-row: span 2;
     }
@@ -1312,15 +1361,15 @@ img {width: 40%;}
        
     }
 
-    .imagenes img:nth-child(2n) {
+    .imagenes button:nth-child(2n) {
         grid-row: span 4 ;
         grid-column: span 2;
     }
     
-    .imagenes img:nth-child(21) {
+    .imagenes button:nth-child(21) {
         grid-row: span 3;
     }
-    .imagenes img:nth-child(24) {
+    .imagenes button:nth-child(24) {
         grid-row: span 2;
         grid-column: span 3 ;
     }
