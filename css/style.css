@@ -47,6 +47,89 @@ html {
     width: 40px;
 }
 
+.btnMenu {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 10px;
+    right: 40px;
+    padding: 0;
+    transition: transform .5s ease-out;
+    background-color: aliceblue;
+    border-color:#674ea7;
+}
+
+.bi-list {
+    font-size: 40px;
+    position: relative;
+    top: -10px;
+    left: -1px;
+    color: #674ea7;
+    
+}
+
+.btn:hover{
+    background-color: aliceblue;
+    border-color:#674ea7;
+    transform: rotate(360deg);
+}
+
+.btn:focus{
+    background-color: aliceblue;
+    border-color:#674ea7;
+    outline: #674ea7;
+    box-shadow: none;
+
+}
+
+
+
+.btnMenu::before {
+    content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid snow;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulso 1.45s infinite;
+}
+
+.btnMenu::after {
+  content: '';
+  width: 30px; height: 30px;
+  border-radius: 100%;
+  border: 6px solid snow;
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulso 1.5s infinite;
+}
+
+@keyframes pulso {
+  0% {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}
+
+.offcanvas {
+    background-color:  #674ea7;
+}
+
+/* 
+
+
 .menuHamburguesa {
     position: absolute;
     top:16px;
@@ -96,7 +179,6 @@ html {
 
 #check:checked + .menuHamburguesa {
     background-color: transparent;
-    /* transform: rotate(100deg); */
 }
 
 #check:checked + .menuHamburguesa::before {
@@ -120,7 +202,7 @@ html {
 
 #check:checked ~ label img.iconoHamburguesa {
     display: none;
-}
+} */
 
 .navegacion {
     width: 100%;
@@ -166,7 +248,7 @@ img {width: 40%;}
     height: 100%;
     color: #ffffff;
     text-decoration: none;
-    padding: 20px;
+    padding: 20px 100px;
     font-size: 24px;
     font-weight: normal;
     font-family: 'Rubik', sans-serif;
@@ -970,7 +1052,7 @@ img {width: 40%;}
 @media screen and (min-width: 900px) {
 
     /* Adaptamos el Nav para Tablet y desktop */
- 
+/*  
    #checkbox {
        display: none;
    }
@@ -1000,7 +1082,7 @@ img {width: 40%;}
         width: 20px;
         height: auto;
     }
-    
+     */
     .navegacionLista li {
         transition: all .2s;
     }
@@ -1011,7 +1093,7 @@ img {width: 40%;}
     
     .navegacionLista li a {
         display: inline-block;
-        padding: 11px 0;
+        padding: 11px 90px;
         font-size: 20px;
         font-weight: normal;
         font-family: 'Rubik', sans-serif;
