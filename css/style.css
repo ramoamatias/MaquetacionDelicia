@@ -19,6 +19,19 @@ html {
     font-family: 'Rubik', sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
+  
+body::-webkit-scrollbar-track {
+    background: #ffffff;        /* color of the tracking area */
+}
+  
+ body::-webkit-scrollbar-thumb {
+   background-color:#674ea7;    /* color of the scroll thumb */
+   border-radius: 25px;       /* roundness of the scroll thumb */
+   border: 1px solid #674ea7;  /* creates padding around scroll thumb */
+}
 
 .encabezado {
     background-color: #674ea7;
@@ -27,6 +40,7 @@ html {
     padding: 8px;
     height: 60px;
     position: sticky;
+    z-index: 9999999999;
     top: 0;
 }
 
@@ -46,89 +60,6 @@ html {
 .icon{
     width: 40px;
 }
-
-.btnMenu {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    top: 10px;
-    right: 40px;
-    padding: 0;
-    transition: transform .5s ease-out;
-    background-color: aliceblue;
-    border-color:#674ea7;
-}
-
-.bi-list {
-    font-size: 40px;
-    position: relative;
-    top: -10px;
-    left: -1px;
-    color: #674ea7;
-    
-}
-
-.btn:hover{
-    background-color: aliceblue;
-    border-color:#674ea7;
-    transform: rotate(360deg);
-}
-
-.btn:focus{
-    background-color: aliceblue;
-    border-color:#674ea7;
-    outline: #674ea7;
-    box-shadow: none;
-
-}
-
-
-
-.btnMenu::before {
-    content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid snow;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: pulso 1.45s infinite;
-}
-
-.btnMenu::after {
-  content: '';
-  width: 30px; height: 30px;
-  border-radius: 100%;
-  border: 6px solid snow;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: pulso 1.5s infinite;
-}
-
-@keyframes pulso {
-  0% {
-    width: 20px;
-    height: 20px;
-    opacity: 1;
-  }
-  100% {
-    width: 80px;
-    height: 80px;
-    opacity: 0;
-  }
-}
-
-.offcanvas {
-    background-color:  #674ea7;
-}
-
-/* 
-
 
 .menuHamburguesa {
     position: absolute;
@@ -179,6 +110,7 @@ html {
 
 #check:checked + .menuHamburguesa {
     background-color: transparent;
+    /* transform: rotate(100deg); */
 }
 
 #check:checked + .menuHamburguesa::before {
@@ -202,7 +134,7 @@ html {
 
 #check:checked ~ label img.iconoHamburguesa {
     display: none;
-} */
+}
 
 .navegacion {
     width: 100%;
@@ -248,7 +180,7 @@ img {width: 40%;}
     height: 100%;
     color: #ffffff;
     text-decoration: none;
-    padding: 20px 100px;
+    padding: 20px;
     font-size: 24px;
     font-weight: normal;
     font-family: 'Rubik', sans-serif;
@@ -828,6 +760,17 @@ img {width: 40%;}
     margin: 10px 0;
 }
 
+.linkRecetas {
+    color: #000000;
+    text-decoration: none;
+}
+
+.linkRecetas:hover {
+    color: #674ea7;
+    font-weight: bold;
+    text-decoration: none;
+}
+
 
 #calientes{
     grid-area: TitCal;
@@ -961,36 +904,149 @@ img {width: 40%;}
 }
 
 .card {
-    position: static;
+    position: relative;
+    width: 20rem;
     border-radius: 25px;
     overflow: hidden;
-    height: 24rem;
+    height: 26rem;
     background-color: #e7dfff;
     margin-bottom: 30px;
+    box-shadow: 5px 5px 10px black;
+    justify-content: space-between;
 }
 
 .card-title {
     padding: 1rem;
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     border-bottom: 1px solid black;
 }
 
 .card-text {
-    padding: 1rem;
-    width: 80%;
-    margin-left:0 auto;
+    padding: 7px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
 }
 
-.linkRecetas {
-    color: #000000;
-    text-decoration: none;
+
+
+.btn{
+    background-color: #674ea7;
+    color: #ffffff;
+    font-size: .8rem;
+    padding: 10px;
+    /* width: 30%;
+    height: 35px; */
+    margin: 0 auto;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
-.linkRecetas:hover {
+.btn:hover {
+    background-color: #ffffff;
+    color: #674ea7;
+    border: 1px solid #674ea7;
+    
+    
+}
+
+
+.modal {
+    z-index: 2999999999;
+    /* backdrop-filter: brightness(0.5); */
+}
+
+.modal-content {
+    border-radius: 25px;
+}
+.modal::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    opacity: .5;
+}
+
+.modal-title {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.modal-header {
+    background-color: #674ea7;
+    /* border:1px solid black; */
+}
+
+.modal-body {
+    background-color: #e7dfff;
+}
+
+
+
+.modal-body::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+  }
+  
+  .modal-body::-webkit-scrollbar-track {
+    background: #ffffff;        /* color of the tracking area */
+  }
+  
+  .modal-body::-webkit-scrollbar-thumb {
+    background-color:#674ea7;    /* color of the scroll thumb */
+    border-radius: 25px;       /* roundness of the scroll thumb */
+    border: 1px solid #674ea7;  /* creates padding around scroll thumb */
+  }
+
+
+.modal-body img {
+    width: 100%;
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
+.modal-body p{
+    padding: 5px;
+    text-align: center;
+}
+
+.modal-body ul li::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 25px;
+    border: 3px solid #674ea7;
+    margin-right: 10px;
+
+}
+.modal-body ul {
+    list-style: none;
+}
+
+
+.modal-body ol li {
+    list-style-type: none;
+    counter-increment: lista;
+    position:relative;
+}
+
+.modal-body ol li::before{
     color: #674ea7;
     font-weight: bold;
-    text-decoration: none;
+    content: counter(lista) ")";
+    margin-right: 5px;
+
+
+}
+
+.modal-header .btn-close {
+    margin-right: 0;
+}
+
+.btn-close {
+    background: url("../assets/icons/cancel.svg");
 }
 
 @media screen and (min-width: 600px) {
@@ -1046,13 +1102,16 @@ img {width: 40%;}
         height: auto;
         width: auto;
     }
+    .card {
+        width: 17rem;
+    }
 }
 
 
 @media screen and (min-width: 900px) {
 
     /* Adaptamos el Nav para Tablet y desktop */
-/*  
+ 
    #checkbox {
        display: none;
    }
@@ -1082,7 +1141,7 @@ img {width: 40%;}
         width: 20px;
         height: auto;
     }
-     */
+    
     .navegacionLista li {
         transition: all .2s;
     }
@@ -1093,7 +1152,7 @@ img {width: 40%;}
     
     .navegacionLista li a {
         display: inline-block;
-        padding: 11px 90px;
+        padding: 11px 0;
         font-size: 20px;
         font-weight: normal;
         font-family: 'Rubik', sans-serif;
@@ -1428,7 +1487,10 @@ img {width: 40%;}
     }
     
     
-    
+    .modal-dialog {
+        max-width: 700px;
+        /* background-color: aqua; */
+    }
 
  
 }
@@ -1456,5 +1518,10 @@ img {width: 40%;}
         grid-column: span 3 ;
     }
 
-    
+    .card {
+        width: 25rem;
+        height: 29rem;
+    }
+
+   
 }
