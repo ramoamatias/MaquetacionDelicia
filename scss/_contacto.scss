@@ -1,0 +1,115 @@
+@import 'variables';
+
+.contacto {
+    width: 100%;
+    height: 100vh; 
+    font-family: $familiaFuente;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.2)), url("../assets/galeria/FondoHome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.mainContacto {
+    height:calc(100vh - 170px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formularioContacto {
+    display:flex;
+    flex-direction: column;
+    width: 350px;
+    height: 400px;
+    border-radius: 30px;
+    border: 3px solid #000000;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position:absolute;
+        width: 350px;
+        height: 400px;
+        border-radius: 30px;
+        backdrop-filter: blur(5px);
+        z-index: -1;
+    } 
+
+    input {
+        width: 60%;
+        margin: 10px auto;
+        border: none;
+        border-bottom: 2px solid $colorPrimario;
+        background-color: #674ea750;
+        border-radius: 25px;
+        padding: 10px;
+        text-align: center;
+        color: $colorSecundario;
+        font-size: 16px;
+        font-weight: bolder;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $colorSecundario;
+            font-size: 16px;
+            font-weight: bolder;
+        } 
+    }
+
+    textarea {
+        height: 100%;
+        margin: 16px 10px 0px 10px;
+        border-bottom: 2px solid $colorPrimario;
+        background-color: #674ea780;
+        border-radius: 25px;
+        border: none;
+        padding: 10px;
+        color: $colorSecundario;
+        font-size: 18px;
+        font-weight: bolder;
+        resize: none;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: $colorSecundario;
+            font-size: 18px;
+            font-weight: bolder;
+            text-align: center;
+        } 
+    }
+
+    .btnEnviarContacto {
+        background-color: $colorPrimario;
+        color:$colorSecundario;
+        margin: 10px auto;
+        font-weight: bolder;
+        width: 100px;
+        border: 1px solid #000000;
+
+        &:hover {
+            color: $colorActive;
+            background-color: $colorSecundario;
+            font-weight: bolder;
+            border-radius: 20px;
+            border: 1px solid $colorPrimario;
+        }
+    }
+
+}
+
+.tituloContacto {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    font-size: 30px;
+    color: $colorPrimario;
+    border-bottom: 3px solid black;
+    text-shadow: 2px 1px $colorSecundario;
+    margin-bottom: 10px;
+}

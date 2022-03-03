@@ -1,0 +1,82 @@
+@import 'variables';
+
+.inicio {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mainInicio {
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;   
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)), url("../assets/galeria/FondoHome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.inicioTitulo {
+    font-family: 'Great Vibes', cursive;
+    font-size: 100px;
+    color: $colorPrimario;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 1px 1px $colorSecundario;
+}
+
+.inicioDescripcion {
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-weight: bolder;
+    color: $colorSecundario;
+    text-shadow: 2px 2px $colorPrimario;
+    white-space: nowrap;
+    border-right: 4px solid;
+    width: 14ch;
+    animation: typing 4s steps(14), blink .5s infinite step-end alternate;
+    overflow: hidden;
+}
+
+@keyframes typing {
+    from  {width: 0;}
+    
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }    
+}
+
+@media screen and (min-width: 900px) {
+
+.logo {  
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.titulo {
+    font-size: 40px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-left: 2px;
+    font-family: 'Great Vibes', cursive;
+    text-shadow: 2px 2px #000000;
+}
+
+.inicioTitulo {
+    font-size: 200px;
+}
+
+.inicioDescripcion {
+    font-size: 30px;
+    margin: 0 auto;
+}
+
+}
+
+

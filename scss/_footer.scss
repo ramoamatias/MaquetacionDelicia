@@ -1,0 +1,45 @@
+@import 'variables';
+
+.footer{
+    background-color: $colorPrimario;
+    height: 110px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: $familiaFuente;
+}
+
+.tituloFooter {
+    color: $colorSecundario;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-bottom: 2px;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.iconoFooterContenedor {
+    display: flex;
+    justify-content: space-around;
+
+    a {
+        transition: all .5s;
+
+        &:hover {
+            transform: scale(1.5,1.5);        
+        }
+    }
+}
+
+.iconoFooter {
+    width: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.copyrightFooter {
+    color: $colorSecundario;
+    font-size: 12px;
+    padding: 10px;
+}

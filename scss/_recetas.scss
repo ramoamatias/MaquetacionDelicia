@@ -1,0 +1,525 @@
+@import 'variables';
+
+.encabezadoReceta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+    grid-area: Encabezado;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        input[type="search"] {
+            border: 2px solid $colorPrimario;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 16px;    
+            margin-right: 5px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        input[type="submit"] {
+            background-color: $colorPrimario;
+            color: $colorSecundario;
+            font-weight: bolder;
+            width: 100px;
+            padding: 9px;
+            border: 1px solid #000000;
+            border-radius: 10px;
+
+            &:hover {
+                color: $colorActive;
+                background-color: $colorSecundario;
+                border-radius: 10px;
+                border: 1px solid $colorPrimario;
+            }
+        }
+
+    }
+}
+
+.tituloReceta {
+    font-size: 48px;
+    color: $colorPrimario;
+    text-shadow: 2px 2px #000000;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.lista {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+    height: 150px;
+    width: 350px;
+    padding:5px;
+    list-style: none;
+    background-color: $colorPrimario;
+    border-radius: 25px;
+    grid-area: nav;
+    text-align: center;
+
+    li a {
+        color: $colorSecundario;
+        font-weight: normal;
+        display: inline-block;
+        padding: 10px;
+        text-decoration: none;
+        padding-left: 10px;
+        font-weight: bold;
+        font-family: cursive;
+        
+        &:hover {
+            color: $colorPrimario;
+            background-color: $colorSecundHover;
+            border-radius: 20px;
+        }
+    }
+}
+
+.contenidoRecetas {
+    display: grid;
+    grid-template-areas:     "Encabezado "
+                             "nav        "
+                             "TitCal     "
+                             "Cal1       "
+                             "Cal2       "
+                             "Cal3       "
+                             "Cal4       "
+                             "linkCal    "
+                             "TitFrios   "
+                             "Frios1     "
+                             "Frios2     "
+                             "Frios3     "
+                             "Frios4     "
+                             "linkFrios  " 
+                             "TitFritos  "
+                             "Fritos1    "
+                             "Fritos2    "
+                             "Fritos3    "
+                             "Fritos4    "
+                             "linkFritos "
+                             "TitHel     "
+                             "Hel1       "
+                             "Hel2       "
+                             "Hel3       "
+                             "Hel4       "
+                             "linkHel    "
+                             "TitNat     "
+                             "Nat1       "
+                             "Nat2       "
+                             "Nat3       "
+                             "Nat4       "
+                             "linkNat    "
+                             ;
+    justify-items: center;
+
+    h2 {
+        margin: 30px 10px;
+        font-size: 32px;
+        color: $colorPrimario;
+    }
+}
+
+.linkRecetas {
+    color: #000000;
+    text-decoration: none;
+
+    &:hover {
+        color: $colorPrimario;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+}
+
+
+#calientes{
+    grid-area: TitCal;
+    justify-self: start;
+}
+
+.cal1 {
+    grid-area: Cal1;
+    justify-self: center;
+    align-self: stretch;
+}
+
+.cal2 {
+    grid-area: Cal2;
+}
+
+.cal3 {
+    grid-area: Cal3;
+}
+
+.cal4 {
+    grid-area: Cal4;
+}
+
+.linkCal {
+    grid-area: linkCal;
+}
+
+
+#frios {
+    grid-area: TitFrios;
+    justify-self: start;
+}
+
+.frios1 {
+    grid-area: Frios1;
+}
+
+.frios2 {
+    grid-area: Frios2;
+}
+
+.frios3 {
+    grid-area: Frios3;
+}
+
+.frios4 {
+    grid-area: Frios4;
+}
+
+.linkFrios {
+    grid-area: linkFrios;
+}
+
+
+#fritos {
+    grid-area: TitFritos;
+    justify-self: start;
+}
+
+.fritos1 {
+    grid-area: Fritos1;
+}
+
+.fritos2 {
+    grid-area: Fritos2;
+}
+
+.fritos3 {
+    grid-area: Fritos3;
+}
+
+.fritos4 {
+    grid-area: Fritos4;
+}
+
+.linkFritos {
+    grid-area: linkFritos;
+}
+
+#aBaseDeHelados {
+    grid-area: TitHel;
+    justify-self: start;
+}
+
+.hel1 {
+    grid-area: Hel1;
+}
+
+.hel2 {
+    grid-area: Hel2;
+}
+
+.hel3 {
+    grid-area: Hel3;
+}
+
+.hel4 {
+    grid-area: Hel4;
+}
+
+.linkHel {
+    grid-area: linkHel;
+}
+
+
+#QuesosYFrutasAlNatural {
+    grid-area: TitNat;
+    justify-self: start;
+}
+
+.nat1 {
+    grid-area: Nat1;
+}
+
+.nat2 {
+    grid-area: Nat2;
+}
+
+.nat3 {
+    grid-area: Nat3;
+}
+
+.nat4 {
+    grid-area: Nat4;
+}
+
+.linkNat {
+    grid-area: linkNat;
+    margin-bottom: 10px;
+}
+
+.card {
+    position: relative;
+    width: 20rem;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 26rem;
+    background-color: $colorTerciario;
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 10px black;
+    justify-content: space-between;
+}
+
+.card-title {
+    padding: 1rem;
+    width: 90%;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+}
+
+.card-text {
+    padding: 7px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.btn{
+    background-color: $colorPrimario;
+    color: $colorSecundario;
+    font-size: .8rem;
+    padding: 10px;
+    margin: 0 auto;
+    font-weight: bold;
+    margin-bottom: 5px;
+    
+    &:hover {
+        background-color: $colorSecundario;
+        color: $colorPrimario;
+        border: 1px solid  $colorPrimario;       
+    }
+
+}
+
+.modal {
+    z-index: 2999999999;
+
+    &::before {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background-color: #000000;
+        opacity: .5;
+    }
+}
+
+.modal-content {
+    border-radius: 25px;
+}
+
+.modal-title {
+    font-size: 2rem;
+    color:$colorSecundario;
+}
+
+.modal-header {
+    background-color: $colorPrimario;
+
+    .btn-close {
+        margin-right: 0;
+        background: url("../assets/icons/cancel.svg");
+    }
+}
+
+.modal-body {
+    background-color: $colorTerciario;
+
+    &::-webkit-scrollbar {
+        width: 5px;      
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $colorSecundario;     
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color:$colorPrimario;
+        border-radius: 25px;      
+        border: 1px solid $colorPrimario;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 25px;
+        margin-bottom: 30px;
+ 
+    }
+
+    p{
+        padding: 5px;
+        text-align: center;
+    }
+
+    ul {
+        list-style: none;
+
+        li::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 25px;
+            border: 3px solid  $colorPrimario;
+            margin-right: 10px;
+        }
+    }
+
+    ol li {
+        list-style-type: none;
+        counter-increment: lista;
+        
+        position:relative;
+
+        &::before{
+            color: $colorPrimario;
+            font-weight: bold;
+            content: counter(lista) ")";
+            margin-right: 5px;
+        }
+    }
+
+
+}
+
+@media screen and (min-width: 600px) { 
+
+    .contenidoRecetas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:     "Encabezado  Encabezado"
+                                 "nav         nav"
+                                 "TitCal      ."
+                                 "Cal1       Cal2"
+                                 "Cal3       Cal4"
+                                 "linkCal    linkCal"
+                                 "TitFrios   ."
+                                 "Frios1     Frios2"
+                                 "Frios3     Frios4"
+                                 "linkFrios  linkFrios" 
+                                 "TitFritos  ."
+                                 "Fritos1    Fritos2"
+                                 "Fritos3    Fritos4"
+                                 "linkFritos linkFritos"
+                                 "TitHel     ."
+                                 "Hel1       Hel2"
+                                 "Hel3       Hel4"
+                                 "linkHel    linkHel"
+                                 "TitNat     ."
+                                 "Nat1       Nat2"
+                                 "Nat3       Nat4"
+                                 "linkNat    linkNat"
+                                 ;
+        justify-items: center;
+    }
+
+    .lista {
+        flex-direction: row;
+        height: auto;
+        width: auto;
+    }
+    .card {
+        width: 17rem;
+    }
+}
+
+
+@media screen and (min-width: 900px) {
+     
+    .contenidoRecetas {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:     "Encabezado  Encabezado  Encabezado"
+                                 "nav         nav         nav"
+                                 "TitCal      .           ."
+                                 "Cal1       Cal2         Cal3"
+                                 ".          Cal4         ."
+                                 "linkCal    linkCal      linkCal"
+                                 "TitFrios   .            ."
+                                 "Frios1     Frios2       Frios3"
+                                 ".          Frios4       ."
+                                 "linkFrios  linkFrios    linkFrios" 
+                                 "TitFritos  .            ."
+                                 "Fritos1    Fritos2      Fritos3"
+                                 ".          Fritos4      ."
+                                 "linkFritos linkFritos   linkFritos"
+                                 "TitHel     .            ."
+                                 "Hel1       Hel2         Hel3"
+                                 ".          Hel4         ."
+                                 "linkHel    linkHel      linkHel"
+                                 "TitNat     .            ."
+                                 "Nat1       Nat2         Nat3"
+                                 ".          Nat4         ."
+                                 "linkNat    linkNat      linkNat"
+                                 ;
+        justify-items: center;
+    }
+}
+
+@media screen and (min-width: 1300px) { 
+    .contenidoRecetas {
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-areas: "Encabezado  Encabezado  Encabezado  Encabezado"
+                             "nav         nav         nav         nav       "
+                             "TitCal      .           .           .         "
+                             "Cal1        Cal2        Cal3        Cal4      "
+                             "linkCal     linkCal     linkCal     linkCal   "
+                             "TitFrios    .           .           .         "
+                             "Frios1      Frios2      Frios3      Frios4    "
+                             "linkFrios   linkFrios   linkFrios   linkFrios "
+                             "TitFritos   .           .           .         "
+                             "Fritos1     Fritos2     Fritos3     Fritos4   "
+                             "linkFritos  linkFritos  linkFritos  linkFritos"
+                             "TitHel      TitHel      TitHel      .         "
+                             "Hel1        Hel2        Hel3        Hel4      "
+                             "linkHel     linkHel     linkHel     linkHel   "
+                             "TitNat      TitNat      TitNat      TitNat    "
+                             "Nat1        Nat2        Nat3        Nat4      "
+                             "linkNat     linkNat     linkNat     linkNat   "                            
+
+                             ;
+    
+        justify-items: center;
+        align-items: start;
+    }
+
+    .modal-dialog {
+        max-width: 700px;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+    .card {
+        width: 25rem;
+        height: 29rem;
+    }
+}
