@@ -1,0 +1,18 @@
+@import 'variables';
+@import 'mixins';
+
+.button{
+        font-weight: bolder;
+        width: 100px;
+        border: 1px solid #000000;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all .2s ease-in-out;
+
+        &:hover {
+            @include pintarFondoyLetra ($colorSecundario,$colorActive);
+            border-radius: 10px;
+            border: 1px solid $colorPrimario;
+        }
+}
+

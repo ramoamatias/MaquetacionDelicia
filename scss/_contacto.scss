@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'componentes';
 
 .contacto {
     width: 100%;
@@ -36,20 +37,21 @@
     } 
 
     input {
+        @include pintarFondoyLetra (#674ea750,$colorSecundario);
         width: 60%;
         margin: 10px auto;
         border: none;
         border-bottom: 2px solid $colorPrimario;
-        background-color: #674ea750;
         border-radius: 25px;
         padding: 10px;
         text-align: center;
-        color: $colorSecundario;
         font-size: 16px;
         font-weight: bolder;
 
         &:focus {
             outline: none;
+            background-color: #674ea6;
+            box-shadow: 0px 0px 10px 4px #ffffff;
         }
 
         &::placeholder {
@@ -60,20 +62,21 @@
     }
 
     textarea {
+        @include pintarFondoyLetra (#674ea750,$colorSecundario);
         height: 100%;
         margin: 16px 10px 0px 10px;
         border-bottom: 2px solid $colorPrimario;
-        background-color: #674ea780;
         border-radius: 25px;
         border: none;
         padding: 10px;
-        color: $colorSecundario;
         font-size: 18px;
         font-weight: bolder;
         resize: none;
 
         &:focus {
             outline: none;
+            background-color: #674ea6;
+            box-shadow: 0px 0px 10px 4px #ffffff;
         }
 
         &::placeholder {
@@ -85,20 +88,10 @@
     }
 
     .btnEnviarContacto {
-        background-color: $colorPrimario;
-        color:$colorSecundario;
+        @include pintarFondoyLetra ($colorPrimario,$colorSecundario);
         margin: 10px auto;
-        font-weight: bolder;
-        width: 100px;
-        border: 1px solid #000000;
-
-        &:hover {
-            color: $colorActive;
-            background-color: $colorSecundario;
-            font-weight: bolder;
-            border-radius: 20px;
-            border: 1px solid $colorPrimario;
-        }
+        @extend .button;
+        
     }
 
 }

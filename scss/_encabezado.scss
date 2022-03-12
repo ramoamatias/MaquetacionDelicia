@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 
 .encabezado {
@@ -20,8 +21,13 @@
     font-family: $familiaEncabezadoTitulo;
     text-shadow: 2px 2px #000000;
 
-    &::first-letter {
-        font-size: 55px;
+
+
+    &:hover {
+        transition: all .3s ease;
+        transform: scale(1.2, 1.2) translate(0px, 0px);
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }
 
@@ -154,8 +160,7 @@
              }
 
              &:hover {
-                color:  $colorActive;
-                background-color: $colorSecundHover;
+                @include pintarFondoyLetra($colorSecundHover, $colorActive);
                 border-radius: 20px;
             }
             

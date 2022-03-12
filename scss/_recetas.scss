@@ -1,4 +1,7 @@
 @import 'variables';
+@import 'mixins';
+@import 'componentes';
+
 
 .encabezadoReceta {
     display: flex;
@@ -25,22 +28,11 @@
                 outline: none;
             }
         }
-
+        
         input[type="submit"] {
-            background-color: $colorPrimario;
-            color: $colorSecundario;
-            font-weight: bolder;
-            width: 100px;
-            padding: 9px;
-            border: 1px solid #000000;
-            border-radius: 10px;
+            @include pintarFondoyLetra ($colorPrimario,$colorSecundario);
 
-            &:hover {
-                color: $colorActive;
-                background-color: $colorSecundario;
-                border-radius: 10px;
-                border: 1px solid $colorPrimario;
-            }
+            @extend .button
         }
 
     }
@@ -80,8 +72,7 @@
         font-family: cursive;
         
         &:hover {
-            color: $colorPrimario;
-            background-color: $colorSecundHover;
+            @include pintarFondoyLetra ($colorSecundHover,$colorPrimario);
             border-radius: 20px;
         }
     }
@@ -91,36 +82,36 @@
     display: grid;
     grid-template-areas:     "Encabezado "
                              "nav        "
-                             "TitCal     "
-                             "Cal1       "
-                             "Cal2       "
-                             "Cal3       "
-                             "Cal4       "
-                             "linkCal    "
-                             "TitFrios   "
-                             "Frios1     "
-                             "Frios2     "
-                             "Frios3     "
-                             "Frios4     "
-                             "linkFrios  " 
-                             "TitFritos  "
-                             "Fritos1    "
-                             "Fritos2    "
-                             "Fritos3    "
-                             "Fritos4    "
-                             "linkFritos "
-                             "TitHel     "
-                             "Hel1       "
-                             "Hel2       "
-                             "Hel3       "
-                             "Hel4       "
-                             "linkHel    "
-                             "TitNat     "
-                             "Nat1       "
-                             "Nat2       "
-                             "Nat3       "
-                             "Nat4       "
-                             "linkNat    "
+                             "Tittar     "
+                             "tar1       "
+                             "tar2       "
+                             "tar3       "
+                             "tar4       "
+                             "linktar    "
+                             "Titmasas   "
+                             "masas1     "
+                             "masas2     "
+                             "masas3     "
+                             "masas4     "
+                             "linkmasas  " 
+                             "Titpanes  "
+                             "panes1    "
+                             "panes2    "
+                             "panes3    "
+                             "panes4    "
+                             "linkpanes "
+                             "Titfact     "
+                             "fact1       "
+                             "fact2       "
+                             "fact3       "
+                             "fact4       "
+                             "linkfact    "
+                             "Titfritas     "
+                             "fritas1       "
+                             "fritas2       "
+                             "fritas3       "
+                             "fritas4       "
+                             "linkfritas    "
                              ;
     justify-items: center;
 
@@ -143,136 +134,25 @@
 
 }
 
+$secciones: tar, masas, panes, fact, fritas;
 
-#calientes{
-    grid-area: TitCal;
-    justify-self: start;
-}
+@each $seccion in $secciones {
 
-.cal1 {
-    grid-area: Cal1;
-    justify-self: center;
-    align-self: stretch;
-}
+    ##{$seccion}{
+        grid-area: Tit#{$seccion};
+        justify-self: start; 
+    } 
 
-.cal2 {
-    grid-area: Cal2;
-}
+    @for $i from 1 through 4  {
+        .#{$seccion}#{$i} {
+            grid-area: #{$seccion}#{$i};
+        }
+    }
 
-.cal3 {
-    grid-area: Cal3;
-}
-
-.cal4 {
-    grid-area: Cal4;
-}
-
-.linkCal {
-    grid-area: linkCal;
-}
-
-
-#frios {
-    grid-area: TitFrios;
-    justify-self: start;
-}
-
-.frios1 {
-    grid-area: Frios1;
-}
-
-.frios2 {
-    grid-area: Frios2;
-}
-
-.frios3 {
-    grid-area: Frios3;
-}
-
-.frios4 {
-    grid-area: Frios4;
-}
-
-.linkFrios {
-    grid-area: linkFrios;
-}
-
-
-#fritos {
-    grid-area: TitFritos;
-    justify-self: start;
-}
-
-.fritos1 {
-    grid-area: Fritos1;
-}
-
-.fritos2 {
-    grid-area: Fritos2;
-}
-
-.fritos3 {
-    grid-area: Fritos3;
-}
-
-.fritos4 {
-    grid-area: Fritos4;
-}
-
-.linkFritos {
-    grid-area: linkFritos;
-}
-
-#aBaseDeHelados {
-    grid-area: TitHel;
-    justify-self: start;
-}
-
-.hel1 {
-    grid-area: Hel1;
-}
-
-.hel2 {
-    grid-area: Hel2;
-}
-
-.hel3 {
-    grid-area: Hel3;
-}
-
-.hel4 {
-    grid-area: Hel4;
-}
-
-.linkHel {
-    grid-area: linkHel;
-}
-
-
-#QuesosYFrutasAlNatural {
-    grid-area: TitNat;
-    justify-self: start;
-}
-
-.nat1 {
-    grid-area: Nat1;
-}
-
-.nat2 {
-    grid-area: Nat2;
-}
-
-.nat3 {
-    grid-area: Nat3;
-}
-
-.nat4 {
-    grid-area: Nat4;
-}
-
-.linkNat {
-    grid-area: linkNat;
-    margin-bottom: 10px;
+    .link#{$seccion} {
+        grid-area: link#{$seccion};
+    }
+    
 }
 
 .card {
@@ -280,7 +160,7 @@
     width: 20rem;
     border-radius: 25px;
     overflow: hidden;
-    height: 26rem;
+    height: 23rem;
     background-color: $colorTerciario;
     margin-bottom: 30px;
     box-shadow: 5px 5px 10px black;
@@ -288,34 +168,27 @@
 }
 
 .card-title {
-    padding: 1rem;
-    width: 90%;
+    @include pintarFondoyLetra($colorPrimario,$colorSecundario);
+    text-align: center;
+    width: 100%;
+    height: 100px;
     margin: 0 auto;
-    border-bottom: 1px solid black;
+    text-align: center;
+    padding-top: 30px;
 }
 
-.card-text {
-    padding: 7px;
+.card-img-top {
     width: 100%;
-    text-align: center;
-    margin-bottom: 0;
+    height: 200px;
+    object-fit: cover;
 }
 
 .btn{
-    background-color: $colorPrimario;
-    color: $colorSecundario;
+    @include pintarFondoyLetra($colorPrimario,$colorSecundario);
     font-size: .8rem;
-    padding: 10px;
     margin: 0 auto;
-    font-weight: bold;
     margin-bottom: 5px;
-    
-    &:hover {
-        background-color: $colorSecundario;
-        color: $colorPrimario;
-        border: 1px solid  $colorPrimario;       
-    }
-
+    @extend .button;
 }
 
 .modal {
@@ -373,30 +246,11 @@
  
     }
 
-    p{
-        padding: 5px;
-        text-align: center;
-    }
-
-    ul {
-        list-style: none;
-
-        li::before {
-            content: "";
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 25px;
-            border: 3px solid  $colorPrimario;
-            margin-right: 10px;
-        }
-    }
-
     ol li {
         list-style-type: none;
         counter-increment: lista;
-        
         position:relative;
+        margin-bottom: 10px;
 
         &::before{
             color: $colorPrimario;
@@ -406,7 +260,61 @@
         }
     }
 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 30px;
+        overflow: hidden;
+        border-top-right-radius: 25px;
+        border-top-left-radius: 25px;
 
+        th,tr,td {
+            border: 1px solid black;
+            
+        }
+    }
+
+
+}
+
+.tablaEncabezado {
+    @include pintarFondoyLetra($colorPrimario,$colorSecundario);
+    font-size: 1.5rem;
+    width: 100%;
+    border-bottom: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+.tablaEncabezado .tablaPorciones{
+    font-size: .8rem;
+}
+.tablaSubtitulo {
+    @include pintarFondoyLetra($colorActive,$colorSecundario);
+    font-weight: bold;
+    padding: 5px;
+}
+
+.tablaIngrediente::before {
+    display: inline-block;
+    content: '';
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #674ea7;
+    margin-right: 10px;
+    margin-bottom: 2px;
+    margin-left: 10px;
+}
+
+.tablaUnidad {
+    text-align: end;
+    padding: 5px;
+    padding-right: 10px;
+}
+
+[colspan="2"] {
+    padding: 5px;            
 }
 
 @media screen and (min-width: 600px) { 
@@ -416,26 +324,26 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-areas:     "Encabezado  Encabezado"
                                  "nav         nav"
-                                 "TitCal      ."
-                                 "Cal1       Cal2"
-                                 "Cal3       Cal4"
-                                 "linkCal    linkCal"
-                                 "TitFrios   ."
-                                 "Frios1     Frios2"
-                                 "Frios3     Frios4"
-                                 "linkFrios  linkFrios" 
-                                 "TitFritos  ."
-                                 "Fritos1    Fritos2"
-                                 "Fritos3    Fritos4"
-                                 "linkFritos linkFritos"
-                                 "TitHel     ."
-                                 "Hel1       Hel2"
-                                 "Hel3       Hel4"
-                                 "linkHel    linkHel"
-                                 "TitNat     ."
-                                 "Nat1       Nat2"
-                                 "Nat3       Nat4"
-                                 "linkNat    linkNat"
+                                 "Tittar      ."
+                                 "tar1       tar2"
+                                 "tar3       tar4"
+                                 "linktar    linktar"
+                                 "Titmasas   ."
+                                 "masas1     masas2"
+                                 "masas3     masas4"
+                                 "linkmasas  linkmasas" 
+                                 "Titpanes  ."
+                                 "panes1    panes2"
+                                 "panes3    panes4"
+                                 "linkpanes linkpanes"
+                                 "Titfact     ."
+                                 "fact1       fact2"
+                                 "fact3       fact4"
+                                 "linkfact    linkfact"
+                                 "Titfritas     ."
+                                 "fritas1       fritas2"
+                                 "fritas3       fritas4"
+                                 "linkfritas    linkfritas"
                                  ;
         justify-items: center;
     }
@@ -458,26 +366,26 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-areas:     "Encabezado  Encabezado  Encabezado"
                                  "nav         nav         nav"
-                                 "TitCal      .           ."
-                                 "Cal1       Cal2         Cal3"
-                                 ".          Cal4         ."
-                                 "linkCal    linkCal      linkCal"
-                                 "TitFrios   .            ."
-                                 "Frios1     Frios2       Frios3"
-                                 ".          Frios4       ."
-                                 "linkFrios  linkFrios    linkFrios" 
-                                 "TitFritos  .            ."
-                                 "Fritos1    Fritos2      Fritos3"
-                                 ".          Fritos4      ."
-                                 "linkFritos linkFritos   linkFritos"
-                                 "TitHel     .            ."
-                                 "Hel1       Hel2         Hel3"
-                                 ".          Hel4         ."
-                                 "linkHel    linkHel      linkHel"
-                                 "TitNat     .            ."
-                                 "Nat1       Nat2         Nat3"
-                                 ".          Nat4         ."
-                                 "linkNat    linkNat      linkNat"
+                                 "Tittar      .           ."
+                                 "tar1       tar2         tar3"
+                                 ".          tar4         ."
+                                 "linktar    linktar      linktar"
+                                 "Titmasas   .            ."
+                                 "masas1     masas2       masas3"
+                                 ".          masas4       ."
+                                 "linkmasas  linkmasas    linkmasas" 
+                                 "Titpanes  .            ."
+                                 "panes1    panes2      panes3"
+                                 ".          panes4      ."
+                                 "linkpanes linkpanes   linkpanes"
+                                 "Titfact     .            ."
+                                 "fact1       fact2         fact3"
+                                 ".          fact4         ."
+                                 "linkfact    linkfact      linkfact"
+                                 "Titfritas     .            ."
+                                 "fritas1       fritas2         fritas3"
+                                 ".          fritas4         ."
+                                 "linkfritas    linkfritas      linkfritas"
                                  ;
         justify-items: center;
     }
@@ -490,21 +398,21 @@
         grid-template-columns: repeat(4,1fr);
         grid-template-areas: "Encabezado  Encabezado  Encabezado  Encabezado"
                              "nav         nav         nav         nav       "
-                             "TitCal      .           .           .         "
-                             "Cal1        Cal2        Cal3        Cal4      "
-                             "linkCal     linkCal     linkCal     linkCal   "
-                             "TitFrios    .           .           .         "
-                             "Frios1      Frios2      Frios3      Frios4    "
-                             "linkFrios   linkFrios   linkFrios   linkFrios "
-                             "TitFritos   .           .           .         "
-                             "Fritos1     Fritos2     Fritos3     Fritos4   "
-                             "linkFritos  linkFritos  linkFritos  linkFritos"
-                             "TitHel      TitHel      TitHel      .         "
-                             "Hel1        Hel2        Hel3        Hel4      "
-                             "linkHel     linkHel     linkHel     linkHel   "
-                             "TitNat      TitNat      TitNat      TitNat    "
-                             "Nat1        Nat2        Nat3        Nat4      "
-                             "linkNat     linkNat     linkNat     linkNat   "                            
+                             "Tittar      .           .           .         "
+                             "tar1        tar2        tar3        tar4      "
+                             "linktar     linktar     linktar     linktar   "
+                             "Titmasas    .           .           .         "
+                             "masas1      masas2      masas3      masas4    "
+                             "linkmasas   linkmasas   linkmasas   linkmasas "
+                             "Titpanes   .           .           .         "
+                             "panes1     panes2     panes3     panes4   "
+                             "linkpanes  linkpanes  linkpanes  linkpanes"
+                             "Titfact      Titfact      Titfact      .         "
+                             "fact1        fact2        fact3        fact4      "
+                             "linkfact     linkfact     linkfact     linkfact   "
+                             "Titfritas      Titfritas      Titfritas      Titfritas    "
+                             "fritas1        fritas2        fritas3        fritas4      "
+                             "linkfritas     linkfritas     linkfritas     linkfritas   "                            
 
                              ;
     
@@ -521,5 +429,9 @@
     .card {
         width: 25rem;
         height: 29rem;
+    }
+
+    .card-img-top {
+        height: 280px;
     }
 }

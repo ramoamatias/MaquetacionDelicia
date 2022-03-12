@@ -7,7 +7,7 @@
 }
 
 a:hover{
-    color:4;
+    color:#ffffff;
 }
 
 button {
@@ -23,16 +23,16 @@ html {
 
 body {
     &::-webkit-scrollbar {
-        width: 5px;               /* width of the entire scrollbar */
+        width: 5px;              
     }
 
     &::-webkit-scrollbar-track {
-        background:$colorSecundario;        /* color of the tracking area */
+        background:$colorSecundario;
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color:$colorPrimario;    /* color of the scroll thumb */
-        border-radius: 25px;       /* roundness of the scroll thumb */
-        border: 1px solid $colorPrimario;  /* creates padding around scroll thumb */
+        background-color:$colorPrimario;
+        border-radius: 25px;       
+        border: 1px solid $colorPrimario;
      }
 }

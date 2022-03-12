@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 a:hover {
-  color: 4; }
+  color: #ffffff; }
 
 button {
   border: none;
@@ -15,20 +15,15 @@ html {
   font-family: 'Rubik', sans-serif; }
 
 body::-webkit-scrollbar {
-  width: 5px;
-  /* width of the entire scrollbar */ }
+  width: 5px; }
 
 body::-webkit-scrollbar-track {
-  background: #ffffff;
-  /* color of the tracking area */ }
+  background: #ffffff; }
 
 body::-webkit-scrollbar-thumb {
   background-color: #674ea7;
-  /* color of the scroll thumb */
   border-radius: 25px;
-  /* roundness of the scroll thumb */
-  border: 1px solid #674ea7;
-  /* creates padding around scroll thumb */ }
+  border: 1px solid #674ea7; }
 
 .encabezado {
   background-color: #674ea7;
@@ -47,8 +42,11 @@ body::-webkit-scrollbar-thumb {
   margin-left: 2px;
   font-family: "Great Vibes", cursive;
   text-shadow: 2px 2px #000000; }
-  .titulo::first-letter {
-    font-size: 55px; }
+  .titulo:hover {
+    transition: all .3s ease;
+    transform: scale(1.2, 1.2) translate(0px, 0px);
+    padding-left: 10px;
+    padding-right: 10px; }
 
 .icon {
   width: 40px; }
@@ -146,8 +144,8 @@ body::-webkit-scrollbar-thumb {
         animation-iteration-count: infinite;
         animation-direction: alternate; }
       .navegacionLista li a:hover {
-        color: #ff64af;
         background-color: #ffffff95;
+        color: #ff64af;
         border-radius: 20px; }
 
 @keyframes resaltar {
@@ -296,6 +294,19 @@ body::-webkit-scrollbar-thumb {
     font-size: 30px;
     margin: 0 auto; } }
 
+.button, .encabezadoReceta form input[type="submit"], .btn, .formularioContacto .btnEnviarContacto {
+  font-weight: bolder;
+  width: 100px;
+  border: 1px solid #000000;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all .2s ease-in-out; }
+  .button:hover, .encabezadoReceta form input:hover[type="submit"], .btn:hover, .formularioContacto .btnEnviarContacto:hover {
+    background-color: #ffffff;
+    color: #ff64af;
+    border-radius: 10px;
+    border: 1px solid #674ea7; }
+
 .encabezadoReceta {
   display: flex;
   flex-direction: column;
@@ -318,17 +329,7 @@ body::-webkit-scrollbar-thumb {
         outline: none; }
     .encabezadoReceta form input[type="submit"] {
       background-color: #674ea7;
-      color: #ffffff;
-      font-weight: bolder;
-      width: 100px;
-      padding: 9px;
-      border: 1px solid #000000;
-      border-radius: 10px; }
-      .encabezadoReceta form input[type="submit"]:hover {
-        color: #ff64af;
-        background-color: #ffffff;
-        border-radius: 10px;
-        border: 1px solid #674ea7; }
+      color: #ffffff; }
 
 .tituloReceta {
   font-size: 48px;
@@ -361,44 +362,13 @@ body::-webkit-scrollbar-thumb {
     font-weight: bold;
     font-family: cursive; }
     .lista li a:hover {
-      color: #674ea7;
       background-color: #ffffff95;
+      color: #674ea7;
       border-radius: 20px; }
 
 .contenidoRecetas {
   display: grid;
-  grid-template-areas: "Encabezado "
- "nav        "
- "TitCal     "
- "Cal1       "
- "Cal2       "
- "Cal3       "
- "Cal4       "
- "linkCal    "
- "TitFrios   "
- "Frios1     "
- "Frios2     "
- "Frios3     "
- "Frios4     "
- "linkFrios  " 
- "TitFritos  "
- "Fritos1    "
- "Fritos2    "
- "Fritos3    "
- "Fritos4    "
- "linkFritos "
- "TitHel     "
- "Hel1       "
- "Hel2       "
- "Hel3       "
- "Hel4       "
- "linkHel    "
- "TitNat     "
- "Nat1       "
- "Nat2       "
- "Nat3       "
- "Nat4       "
- "linkNat    ";
+  grid-template-areas: "Encabezado " "nav        " "Tittar     " "tar1       " "tar2       " "tar3       " "tar4       " "linktar    " "Titmasas   " "masas1     " "masas2     " "masas3     " "masas4     " "linkmasas  "  "Titpanes  " "panes1    " "panes2    " "panes3    " "panes4    " "linkpanes " "Titfact     " "fact1       " "fact2       " "fact3       " "fact4       " "linkfact    " "Titfritas     " "fritas1       " "fritas2       " "fritas3       " "fritas4       " "linkfritas    ";
   justify-items: center; }
   .contenidoRecetas h2 {
     margin: 30px 10px;
@@ -413,139 +383,133 @@ body::-webkit-scrollbar-thumb {
     font-weight: bold;
     text-decoration: none; }
 
-#calientes {
-  grid-area: TitCal;
+#tar {
+  grid-area: Tittar;
   justify-self: start; }
 
-.cal1 {
-  grid-area: Cal1;
-  justify-self: center;
-  align-self: stretch; }
+.tar1 {
+  grid-area: tar1; }
 
-.cal2 {
-  grid-area: Cal2; }
+.tar2 {
+  grid-area: tar2; }
 
-.cal3 {
-  grid-area: Cal3; }
+.tar3 {
+  grid-area: tar3; }
 
-.cal4 {
-  grid-area: Cal4; }
+.tar4 {
+  grid-area: tar4; }
 
-.linkCal {
-  grid-area: linkCal; }
+.linktar {
+  grid-area: linktar; }
 
-#frios {
-  grid-area: TitFrios;
+#masas {
+  grid-area: Titmasas;
   justify-self: start; }
 
-.frios1 {
-  grid-area: Frios1; }
+.masas1 {
+  grid-area: masas1; }
 
-.frios2 {
-  grid-area: Frios2; }
+.masas2 {
+  grid-area: masas2; }
 
-.frios3 {
-  grid-area: Frios3; }
+.masas3 {
+  grid-area: masas3; }
 
-.frios4 {
-  grid-area: Frios4; }
+.masas4 {
+  grid-area: masas4; }
 
-.linkFrios {
-  grid-area: linkFrios; }
+.linkmasas {
+  grid-area: linkmasas; }
 
-#fritos {
-  grid-area: TitFritos;
+#panes {
+  grid-area: Titpanes;
   justify-self: start; }
 
-.fritos1 {
-  grid-area: Fritos1; }
+.panes1 {
+  grid-area: panes1; }
 
-.fritos2 {
-  grid-area: Fritos2; }
+.panes2 {
+  grid-area: panes2; }
 
-.fritos3 {
-  grid-area: Fritos3; }
+.panes3 {
+  grid-area: panes3; }
 
-.fritos4 {
-  grid-area: Fritos4; }
+.panes4 {
+  grid-area: panes4; }
 
-.linkFritos {
-  grid-area: linkFritos; }
+.linkpanes {
+  grid-area: linkpanes; }
 
-#aBaseDeHelados {
-  grid-area: TitHel;
+#fact {
+  grid-area: Titfact;
   justify-self: start; }
 
-.hel1 {
-  grid-area: Hel1; }
+.fact1 {
+  grid-area: fact1; }
 
-.hel2 {
-  grid-area: Hel2; }
+.fact2 {
+  grid-area: fact2; }
 
-.hel3 {
-  grid-area: Hel3; }
+.fact3 {
+  grid-area: fact3; }
 
-.hel4 {
-  grid-area: Hel4; }
+.fact4 {
+  grid-area: fact4; }
 
-.linkHel {
-  grid-area: linkHel; }
+.linkfact {
+  grid-area: linkfact; }
 
-#QuesosYFrutasAlNatural {
-  grid-area: TitNat;
+#fritas {
+  grid-area: Titfritas;
   justify-self: start; }
 
-.nat1 {
-  grid-area: Nat1; }
+.fritas1 {
+  grid-area: fritas1; }
 
-.nat2 {
-  grid-area: Nat2; }
+.fritas2 {
+  grid-area: fritas2; }
 
-.nat3 {
-  grid-area: Nat3; }
+.fritas3 {
+  grid-area: fritas3; }
 
-.nat4 {
-  grid-area: Nat4; }
+.fritas4 {
+  grid-area: fritas4; }
 
-.linkNat {
-  grid-area: linkNat;
-  margin-bottom: 10px; }
+.linkfritas {
+  grid-area: linkfritas; }
 
 .card {
   position: relative;
   width: 20rem;
   border-radius: 25px;
   overflow: hidden;
-  height: 26rem;
+  height: 23rem;
   background-color: #e7dfff;
   margin-bottom: 30px;
   box-shadow: 5px 5px 10px black;
   justify-content: space-between; }
 
 .card-title {
-  padding: 1rem;
-  width: 90%;
-  margin: 0 auto;
-  border-bottom: 1px solid black; }
-
-.card-text {
-  padding: 7px;
-  width: 100%;
+  background-color: #674ea7;
+  color: #ffffff;
   text-align: center;
-  margin-bottom: 0; }
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 30px; }
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; }
 
 .btn {
   background-color: #674ea7;
   color: #ffffff;
   font-size: .8rem;
-  padding: 10px;
   margin: 0 auto;
-  font-weight: bold;
   margin-bottom: 5px; }
-  .btn:hover {
-    background-color: #ffffff;
-    color: #674ea7;
-    border: 1px solid #674ea7; }
 
 .modal {
   z-index: 2999999999; }
@@ -584,55 +548,68 @@ body::-webkit-scrollbar-thumb {
     width: 100%;
     border-radius: 25px;
     margin-bottom: 30px; }
-  .modal-body p {
-    padding: 5px;
-    text-align: center; }
-  .modal-body ul {
-    list-style: none; }
-    .modal-body ul li::before {
-      content: "";
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border-radius: 25px;
-      border: 3px solid #674ea7;
-      margin-right: 10px; }
   .modal-body ol li {
     list-style-type: none;
     counter-increment: lista;
-    position: relative; }
+    position: relative;
+    margin-bottom: 10px; }
     .modal-body ol li::before {
       color: #674ea7;
       font-weight: bold;
       content: counter(lista) ")";
       margin-right: 5px; }
+  .modal-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px; }
+    .modal-body table th, .modal-body table tr, .modal-body table td {
+      border: 1px solid black; }
+
+.tablaEncabezado {
+  background-color: #674ea7;
+  color: #ffffff;
+  font-size: 1.5rem;
+  width: 100%;
+  border-bottom: 1px solid black;
+  text-align: center;
+  padding: 10px; }
+
+.tablaEncabezado .tablaPorciones {
+  font-size: .8rem; }
+
+.tablaSubtitulo {
+  background-color: #ff64af;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 5px; }
+
+.tablaIngrediente::before {
+  display: inline-block;
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #674ea7;
+  margin-right: 10px;
+  margin-bottom: 2px;
+  margin-left: 10px; }
+
+.tablaUnidad {
+  text-align: end;
+  padding: 5px;
+  padding-right: 10px; }
+
+[colspan="2"] {
+  padding: 5px; }
 
 @media screen and (min-width: 600px) {
   .contenidoRecetas {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "Encabezado  Encabezado"
- "nav         nav"
- "TitCal      ."
- "Cal1       Cal2"
- "Cal3       Cal4"
- "linkCal    linkCal"
- "TitFrios   ."
- "Frios1     Frios2"
- "Frios3     Frios4"
- "linkFrios  linkFrios" 
- "TitFritos  ."
- "Fritos1    Fritos2"
- "Fritos3    Fritos4"
- "linkFritos linkFritos"
- "TitHel     ."
- "Hel1       Hel2"
- "Hel3       Hel4"
- "linkHel    linkHel"
- "TitNat     ."
- "Nat1       Nat2"
- "Nat3       Nat4"
- "linkNat    linkNat";
+    grid-template-areas: "Encabezado  Encabezado" "nav         nav" "Tittar      ." "tar1       tar2" "tar3       tar4" "linktar    linktar" "Titmasas   ." "masas1     masas2" "masas3     masas4" "linkmasas  linkmasas"  "Titpanes  ." "panes1    panes2" "panes3    panes4" "linkpanes linkpanes" "Titfact     ." "fact1       fact2" "fact3       fact4" "linkfact    linkfact" "Titfritas     ." "fritas1       fritas2" "fritas3       fritas4" "linkfritas    linkfritas";
     justify-items: center; }
   .lista {
     flex-direction: row;
@@ -645,28 +622,7 @@ body::-webkit-scrollbar-thumb {
   .contenidoRecetas {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "Encabezado  Encabezado  Encabezado"
- "nav         nav         nav"
- "TitCal      .           ."
- "Cal1       Cal2         Cal3"
- ".          Cal4         ."
- "linkCal    linkCal      linkCal"
- "TitFrios   .            ."
- "Frios1     Frios2       Frios3"
- ".          Frios4       ."
- "linkFrios  linkFrios    linkFrios" 
- "TitFritos  .            ."
- "Fritos1    Fritos2      Fritos3"
- ".          Fritos4      ."
- "linkFritos linkFritos   linkFritos"
- "TitHel     .            ."
- "Hel1       Hel2         Hel3"
- ".          Hel4         ."
- "linkHel    linkHel      linkHel"
- "TitNat     .            ."
- "Nat1       Nat2         Nat3"
- ".          Nat4         ."
- "linkNat    linkNat      linkNat";
+    grid-template-areas: "Encabezado  Encabezado  Encabezado" "nav         nav         nav" "Tittar      .           ." "tar1       tar2         tar3" ".          tar4         ." "linktar    linktar      linktar" "Titmasas   .            ." "masas1     masas2       masas3" ".          masas4       ." "linkmasas  linkmasas    linkmasas"  "Titpanes  .            ." "panes1    panes2      panes3" ".          panes4      ." "linkpanes linkpanes   linkpanes" "Titfact     .            ." "fact1       fact2         fact3" ".          fact4         ." "linkfact    linkfact      linkfact" "Titfritas     .            ." "fritas1       fritas2         fritas3" ".          fritas4         ." "linkfritas    linkfritas      linkfritas";
     justify-items: center; } }
 
 @media screen and (min-width: 1300px) {
@@ -674,23 +630,7 @@ body::-webkit-scrollbar-thumb {
     padding: 10px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: "Encabezado  Encabezado  Encabezado  Encabezado"
- "nav         nav         nav         nav       "
- "TitCal      .           .           .         "
- "Cal1        Cal2        Cal3        Cal4      "
- "linkCal     linkCal     linkCal     linkCal   "
- "TitFrios    .           .           .         "
- "Frios1      Frios2      Frios3      Frios4    "
- "linkFrios   linkFrios   linkFrios   linkFrios "
- "TitFritos   .           .           .         "
- "Fritos1     Fritos2     Fritos3     Fritos4   "
- "linkFritos  linkFritos  linkFritos  linkFritos"
- "TitHel      TitHel      TitHel      .         "
- "Hel1        Hel2        Hel3        Hel4      "
- "linkHel     linkHel     linkHel     linkHel   "
- "TitNat      TitNat      TitNat      TitNat    "
- "Nat1        Nat2        Nat3        Nat4      "
- "linkNat     linkNat     linkNat     linkNat   ";
+    grid-template-areas: "Encabezado  Encabezado  Encabezado  Encabezado" "nav         nav         nav         nav       " "Tittar      .           .           .         " "tar1        tar2        tar3        tar4      " "linktar     linktar     linktar     linktar   " "Titmasas    .           .           .         " "masas1      masas2      masas3      masas4    " "linkmasas   linkmasas   linkmasas   linkmasas " "Titpanes   .           .           .         " "panes1     panes2     panes3     panes4   " "linkpanes  linkpanes  linkpanes  linkpanes" "Titfact      Titfact      Titfact      .         " "fact1        fact2        fact3        fact4      " "linkfact     linkfact     linkfact     linkfact   " "Titfritas      Titfritas      Titfritas      Titfritas    " "fritas1        fritas2        fritas3        fritas4      " "linkfritas     linkfritas     linkfritas     linkfritas   ";
     justify-items: center;
     align-items: start; }
   .modal-dialog {
@@ -699,7 +639,9 @@ body::-webkit-scrollbar-thumb {
 @media screen and (min-width: 1800px) {
   .card {
     width: 25rem;
-    height: 29rem; } }
+    height: 29rem; }
+  .card-img-top {
+    height: 280px; } }
 
 .galeria {
   width: 100%; }
@@ -786,9 +728,7 @@ body::-webkit-scrollbar-thumb {
   font-family: "Rubik", sans-serif;
   padding: 5px;
   display: grid;
-  grid-template-areas: "TituloSobreMi   TituloSobreMi "
- "VideoSobreMi    VideoSobreMi"
- "ContactoSobreMi ContactoSobreMi"; }
+  grid-template-areas: "TituloSobreMi   TituloSobreMi " "VideoSobreMi    VideoSobreMi" "ContactoSobreMi ContactoSobreMi"; }
 
 .sectionSobreMi {
   display: flex;
@@ -852,8 +792,7 @@ body::-webkit-scrollbar-thumb {
 
 @media screen and (min-width: 900px) {
   .sobreMi {
-    grid-template-areas: "TituloSobreMi   VideoSobreMi"
- "ContactoSobreMi ContactoSobreMi"; }
+    grid-template-areas: "TituloSobreMi   VideoSobreMi" "ContactoSobreMi ContactoSobreMi"; }
   .sectionSobreMi {
     align-self: start; }
   .tituloSobreMi {
@@ -869,6 +808,19 @@ body::-webkit-scrollbar-thumb {
     height: 80vh;
     margin-right: 20px;
     pointer-events: none; } }
+
+.button, .encabezadoReceta form input[type="submit"], .btn, .formularioContacto .btnEnviarContacto {
+  font-weight: bolder;
+  width: 100px;
+  border: 1px solid #000000;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all .2s ease-in-out; }
+  .button:hover, .encabezadoReceta form input:hover[type="submit"], .btn:hover, .formularioContacto .btnEnviarContacto:hover {
+    background-color: #ffffff;
+    color: #ff64af;
+    border-radius: 10px;
+    border: 1px solid #674ea7; }
 
 .contacto {
   width: 100%;
@@ -901,37 +853,41 @@ body::-webkit-scrollbar-thumb {
     backdrop-filter: blur(5px);
     z-index: -1; }
   .formularioContacto input {
+    background-color: #674ea750;
+    color: #ffffff;
     width: 60%;
     margin: 10px auto;
     border: none;
     border-bottom: 2px solid #674ea7;
-    background-color: #674ea750;
     border-radius: 25px;
     padding: 10px;
     text-align: center;
-    color: #ffffff;
     font-size: 16px;
     font-weight: bolder; }
     .formularioContacto input:focus {
-      outline: none; }
+      outline: none;
+      background-color: #674ea6;
+      box-shadow: 0px 0px 10px 4px #ffffff; }
     .formularioContacto input::placeholder {
       color: #ffffff;
       font-size: 16px;
       font-weight: bolder; }
   .formularioContacto textarea {
+    background-color: #674ea750;
+    color: #ffffff;
     height: 100%;
     margin: 16px 10px 0px 10px;
     border-bottom: 2px solid #674ea7;
-    background-color: #674ea780;
     border-radius: 25px;
     border: none;
     padding: 10px;
-    color: #ffffff;
     font-size: 18px;
     font-weight: bolder;
     resize: none; }
     .formularioContacto textarea:focus {
-      outline: none; }
+      outline: none;
+      background-color: #674ea6;
+      box-shadow: 0px 0px 10px 4px #ffffff; }
     .formularioContacto textarea::placeholder {
       color: #ffffff;
       font-size: 18px;
@@ -940,16 +896,7 @@ body::-webkit-scrollbar-thumb {
   .formularioContacto .btnEnviarContacto {
     background-color: #674ea7;
     color: #ffffff;
-    margin: 10px auto;
-    font-weight: bolder;
-    width: 100px;
-    border: 1px solid #000000; }
-    .formularioContacto .btnEnviarContacto:hover {
-      color: #ff64af;
-      background-color: #ffffff;
-      font-weight: bolder;
-      border-radius: 20px;
-      border: 1px solid #674ea7; }
+    margin: 10px auto; }
 
 .tituloContacto {
   width: 80%;

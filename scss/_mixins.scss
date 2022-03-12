@@ -1,0 +1,4 @@
+@mixin pintarFondoyLetra ($backgraund-color, $color){
+    background-color: $backgraund-color;
+    color: $color;
+}
