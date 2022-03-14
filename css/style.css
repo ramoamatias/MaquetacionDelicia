@@ -487,7 +487,8 @@ body::-webkit-scrollbar-thumb {
   background-color: #e7dfff;
   margin-bottom: 30px;
   box-shadow: 5px 5px 10px black;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border: none; }
 
 .card-title {
   background-color: #674ea7;
@@ -522,7 +523,8 @@ body::-webkit-scrollbar-thumb {
     opacity: .5; }
 
 .modal-content {
-  border-radius: 25px; }
+  border-radius: 25px;
+  border: none; }
 
 .modal-title {
   font-size: 2rem;
@@ -645,6 +647,10 @@ body::-webkit-scrollbar-thumb {
 
 .galeria {
   width: 100%; }
+  .galeria .modal-body {
+    height: 90vh; }
+    .galeria .modal-body img {
+      margin-bottom: 0px; }
 
 .imagenes {
   display: grid;

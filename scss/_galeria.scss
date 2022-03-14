@@ -2,6 +2,14 @@
 
 .galeria {
     width: 100%;
+
+    .modal-body {
+        height: 90vh;
+
+        img {
+            margin-bottom: 0px;
+        }
+    }
 }
 
 .imagenes {
