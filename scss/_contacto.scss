@@ -111,7 +111,7 @@
 
 @media screen and (max-width: 400px) {
     .mainContacto {
-        height: 90vh;
+        height:calc(100vh - 120px);
     }
 
     .formularioContacto {
