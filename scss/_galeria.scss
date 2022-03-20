@@ -1,16 +1,22 @@
 @import 'variables';
 
+
+
+
+
+
 .galeria {
     width: 100%;
-
+    min-width: 250px;
     .modal-body {
         height: 90vh;
-
+    
         img {
             margin-bottom: 0px;
         }
     }
 }
+
 
 .imagenes {
     display: grid;
@@ -28,6 +34,24 @@
 
     button:nth-child(2n + 1) {
         grid-row: span 2;
+    }
+}
+
+@media screen and (max-width: 400px)  {
+    .imagenes {
+        display: grid;
+        grid-template-columns: 250px;
+        justify-content: center;
+        grid-auto-rows:auto;
+
+        .modal-title {
+            font-size: 1rem;
+        }
+
+        .btn-close {
+            width: 1px;
+            height: 1px;
+        }
     }
 }
 

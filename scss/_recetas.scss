@@ -23,6 +23,7 @@
             border-radius: 10px;
             font-size: 16px;    
             margin-right: 5px;
+            margin-bottom: 10px;
 
             &:focus {
                 outline: none;
@@ -317,6 +318,110 @@ $secciones: tar, masas, panes, fact, fritas;
 
 [colspan="2"] {
     padding: 5px;            
+}
+
+
+
+@media screen and (max-width: 400px)  {
+    
+    .encabezadoReceta {
+        form {
+
+            input{
+
+                &[type="search"] {
+                    padding: 5px;
+                    font-size: .5rem;
+                }
+
+                
+            }
+        }
+    }
+    
+    .lista {
+        width: 140px;
+        height: auto;
+        flex-wrap: nowrap;
+
+        li {
+            
+            a {
+                padding: 5px;
+                font-size: .5rem;
+                width: 100%;
+            }
+        }
+    }
+    
+    .contenidoRecetas {
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        a {
+            font-size: .7rem;
+        }
+
+        .modal-title {
+            font-size: 1rem;
+        }
+
+        .btn-close {
+            width: 1px;
+            height: 1px;
+        }
+
+       .tablaEncabezado {
+           font-size: 1rem;
+       }
+
+       .tablaPorciones,
+       .tablaIngrediente,
+       .tablaUnidad {
+           font-size: .5rem;
+       }
+
+       .tablaSubtitulo {
+           font-size: .7rem;
+       }
+       .modal-body {
+           h4 {
+               font-size: 1rem;
+           }
+
+
+           ol {
+               li {
+                   font-size: .5rem;
+               }
+           }
+       }
+
+    }
+    
+    .card {
+        width: 200px;
+        height:200px;
+    }
+
+    .card-img-top {
+        height:100px;
+    }
+
+    .card-title {
+        height: auto;
+        padding: 5px;
+        font-size: 1rem;
+    }
+
+    .tituloReceta {
+        font-size: 2rem;
+    }
+
+    
+
+  
 }
 
 @media screen and (min-width: 600px) { 

@@ -92,6 +92,32 @@
     }
 }
 
+
+@media screen and (max-width: 400px)  {
+    .tituloSobreMi {
+        font-size: 2rem;
+    }
+
+    .descripcionSobreMi {
+        font-size: .7rem;
+        line-height: 1.2rem;
+    }
+
+    .ubicacionSobreMi {
+        h3 {
+            font-size: .7rem;
+        }
+        a {
+            font-size: .5rem;
+        }
+
+        iframe {
+            height: 150px;
+        }
+    }
+
+}
+
 @media screen and (min-width: 900px) {
 
     .sobreMi {

@@ -1,7 +1,7 @@
 @import 'variables';
 
 .footer{
-    background-color: $colorPrimario;
+    background-color: $colorGeneral;
     height: 110px;
     display: flex;
     flex-direction: column;
@@ -42,4 +42,24 @@
     color: $colorSecundario;
     font-size: 12px;
     padding: 10px;
+}
+
+@media screen and (max-width: 400px)  {
+    .tituloFooter {
+        font-size: .6rem;
+        margin-bottom: 0;
+    }
+    
+    .copyrightFooter {
+        font-size: .5rem;
+        padding: 0;
+    }
+
+    .iconoFooter {
+        width: 15px;
+    }
+
+    .footer {
+        height: 80px;
+    }
 }

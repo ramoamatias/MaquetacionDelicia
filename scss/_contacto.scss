@@ -106,3 +106,44 @@
     text-shadow: 2px 1px $colorSecundario;
     margin-bottom: 10px;
 }
+
+
+
+@media screen and (max-width: 400px) {
+    .mainContacto {
+        height: auto;
+    }
+
+    .formularioContacto {
+        width: 200px;
+        height: 300px;
+        margin: 10px auto;
+
+        &::before {
+            width: 200px;
+            height: 300px;
+        }
+        input {
+            font-size: .5rem;
+            margin: 2px auto;
+
+            &::placeholder {
+                font-size: .5rem;
+            }
+        }
+        
+        textarea {
+            font-size: .5rem;
+            margin-top: 4px;
+            
+            &::placeholder {
+                font-size: .5rem;
+            }
+        }
+    }
+
+    .tituloContacto {
+        font-size: 1rem;
+    }
+
+}

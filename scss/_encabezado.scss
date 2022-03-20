@@ -3,7 +3,7 @@
 
 
 .encabezado {
-    background-color: $colorPrimario;
+    background-color: $colorGeneral;
     display: flex;
     justify-content: space-between;
     padding: 8px;
@@ -109,7 +109,7 @@
 
 .navegacion {
     width: 100%;
-    background-color:$colorPrimario;
+    background-color:$colorGeneral;
     height: calc(100vh - 60px);
     position: absolute;
     top:60px;
@@ -179,6 +179,55 @@
         color: $colorActive;
     }
     
+}
+
+@media screen and (max-width: 400px)  {
+    .titulo {
+        font-size: 1.5rem;
+    }
+
+    .menuHamburguesa {
+        width: 30px;
+        height: 5px;
+        top: 5px;
+
+        &::after {
+            transform: rotate(0) translate(0, 1px); 
+        }
+
+        &::before {
+            transform: rotate(0) translate(0, -8px);
+        }
+    }
+
+    #check{
+        height: 40px; 
+        width: 50px;
+    }
+    
+
+
+    .navegacionLista li a {
+        font-size: 1rem;
+        padding:10px;
+
+        img {
+            margin-bottom: 4px;
+        }
+    }
+
+    .icon {
+        width: 20px;
+    }
+
+    .encabezado {
+        height: 40px;
+    }
+
+    .navegacion {
+        height: calc(100vh - 40px);
+        top: 40px;
+    }
 }
 
 @media screen and (min-width: 900px) { 

@@ -80,3 +80,17 @@
 }
 
 
+
+
+@media screen and (max-width: 400px) { 
+    .mainInicio {
+        height: calc(100vh - 40px);
+    }
+
+    .inicioTitulo {
+        font-size: 2rem;
+    }
+    .inicioDescripcion {
+        font-size: 1rem;
+    }
+}
